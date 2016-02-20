@@ -1,2 +1,2 @@
 # everything-about-objc
-play with everything in objective-c
+play with everything of objective-c world
