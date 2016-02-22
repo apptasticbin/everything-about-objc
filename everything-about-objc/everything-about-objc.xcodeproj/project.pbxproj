@@ -24,6 +24,8 @@
 		79C65BBF1C7945C80063068C /* ExperimentDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C65BBC1C7945C80063068C /* ExperimentDataSource.m */; };
 		79C65BC01C7945C80063068C /* ExperimentCaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C65BBE1C7945C80063068C /* ExperimentCaseModel.m */; };
 		79C65BC41C7A21590063068C /* BasicObjectsExperiment.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C65BC31C7A21590063068C /* BasicObjectsExperiment.m */; };
+		79F7A4D51C7B3BD200CCD0F3 /* ExperimentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 79F7A4D41C7B3BD200CCD0F3 /* ExperimentTableViewCell.m */; };
+		79F7A4D71C7B3DC800CCD0F3 /* ExperimentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79F7A4D61C7B3DC800CCD0F3 /* ExperimentTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +78,9 @@
 		79C65BBE1C7945C80063068C /* ExperimentCaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExperimentCaseModel.m; sourceTree = "<group>"; };
 		79C65BC21C7A21590063068C /* BasicObjectsExperiment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BasicObjectsExperiment.h; path = BasicObjectsExperiment/BasicObjectsExperiment.h; sourceTree = "<group>"; };
 		79C65BC31C7A21590063068C /* BasicObjectsExperiment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BasicObjectsExperiment.m; path = BasicObjectsExperiment/BasicObjectsExperiment.m; sourceTree = "<group>"; };
+		79F7A4D31C7B3BD200CCD0F3 /* ExperimentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExperimentTableViewCell.h; path = Views/ExperimentTableViewCell/ExperimentTableViewCell.h; sourceTree = "<group>"; };
+		79F7A4D41C7B3BD200CCD0F3 /* ExperimentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExperimentTableViewCell.m; path = Views/ExperimentTableViewCell/ExperimentTableViewCell.m; sourceTree = "<group>"; };
+		79F7A4D61C7B3DC800CCD0F3 /* ExperimentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ExperimentTableViewCell.xib; path = Views/ExperimentTableViewCell/ExperimentTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				79C65BAE1C790BF20063068C /* Experiments */,
+				79C65BC71C7A5BA30063068C /* Views */,
 				79AB6A2A1C78EC4000FCD7E2 /* ViewControllers */,
 				79C65BC51C7A49A80063068C /* Misc */,
 			);
@@ -275,16 +281,26 @@
 		79C65BC51C7A49A80063068C /* Misc */ = {
 			isa = PBXGroup;
 			children = (
-				79C65BC61C7A49D90063068C /* ObjectiveCRuntime */,
 			);
 			name = Misc;
 			sourceTree = "<group>";
 		};
-		79C65BC61C7A49D90063068C /* ObjectiveCRuntime */ = {
+		79C65BC71C7A5BA30063068C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				79F7A4D21C7B2D9E00CCD0F3 /* ExperimentTableViewCell */,
 			);
-			name = ObjectiveCRuntime;
+			name = Views;
+			sourceTree = "<group>";
+		};
+		79F7A4D21C7B2D9E00CCD0F3 /* ExperimentTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				79F7A4D31C7B3BD200CCD0F3 /* ExperimentTableViewCell.h */,
+				79F7A4D41C7B3BD200CCD0F3 /* ExperimentTableViewCell.m */,
+				79F7A4D61C7B3DC800CCD0F3 /* ExperimentTableViewCell.xib */,
+			);
+			name = ExperimentTableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -394,6 +410,7 @@
 				79AB69FF1C78C0FF00FCD7E2 /* Assets.xcassets in Resources */,
 				79AB6A3E1C78EE7300FCD7E2 /* MainViewController.xib in Resources */,
 				79AB69FA1C78C0FF00FCD7E2 /* Main.storyboard in Resources */,
+				79F7A4D71C7B3DC800CCD0F3 /* ExperimentTableViewCell.xib in Resources */,
 				79AB6A3B1C78EDC800FCD7E2 /* DetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -421,6 +438,7 @@
 			files = (
 				79AB69F41C78C0FF00FCD7E2 /* AppDelegate.m in Sources */,
 				797AE3131C78F923005F9BDD /* RootNavigationController.m in Sources */,
+				79F7A4D51C7B3BD200CCD0F3 /* ExperimentTableViewCell.m in Sources */,
 				79C65BC41C7A21590063068C /* BasicObjectsExperiment.m in Sources */,
 				79AB69FD1C78C0FF00FCD7E2 /* everything_about_objc.xcdatamodeld in Sources */,
 				79AB69F11C78C0FF00FCD7E2 /* main.m in Sources */,
