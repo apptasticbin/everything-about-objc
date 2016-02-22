@@ -18,14 +18,16 @@
 		79AB6A0D1C78C0FF00FCD7E2 /* everything_about_objcTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 79AB6A0C1C78C0FF00FCD7E2 /* everything_about_objcTests.m */; };
 		79AB6A181C78C0FF00FCD7E2 /* everything_about_objcUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 79AB6A171C78C0FF00FCD7E2 /* everything_about_objcUITests.m */; };
 		79AB6A3A1C78EDC800FCD7E2 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79AB6A351C78EDC800FCD7E2 /* DetailViewController.m */; };
-		79AB6A3B1C78EDC800FCD7E2 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79AB6A361C78EDC800FCD7E2 /* DetailViewController.xib */; };
 		79AB6A3C1C78EDC800FCD7E2 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79AB6A391C78EDC800FCD7E2 /* MainViewController.m */; };
-		79AB6A3E1C78EE7300FCD7E2 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79AB6A3D1C78EE7300FCD7E2 /* MainViewController.xib */; };
 		79C65BBF1C7945C80063068C /* ExperimentDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C65BBC1C7945C80063068C /* ExperimentDataSource.m */; };
-		79C65BC01C7945C80063068C /* ExperimentCaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C65BBE1C7945C80063068C /* ExperimentCaseModel.m */; };
-		79C65BC41C7A21590063068C /* BasicObjectsExperiment.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C65BC31C7A21590063068C /* BasicObjectsExperiment.m */; };
+		79C65BC01C7945C80063068C /* ExperimentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C65BBE1C7945C80063068C /* ExperimentModel.m */; };
 		79F7A4D51C7B3BD200CCD0F3 /* ExperimentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 79F7A4D41C7B3BD200CCD0F3 /* ExperimentTableViewCell.m */; };
 		79F7A4D71C7B3DC800CCD0F3 /* ExperimentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79F7A4D61C7B3DC800CCD0F3 /* ExperimentTableViewCell.xib */; };
+		79F7A4E51C7B878E00CCD0F3 /* BaseExperiment.m in Sources */ = {isa = PBXBuildFile; fileRef = 79F7A4DF1C7B878E00CCD0F3 /* BaseExperiment.m */; };
+		79F7A4E61C7B878E00CCD0F3 /* BasicObjectsExperiment.m in Sources */ = {isa = PBXBuildFile; fileRef = 79F7A4E21C7B878E00CCD0F3 /* BasicObjectsExperiment.m */; };
+		79F7A4EA1C7BA7EF00CCD0F3 /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79F7A4E91C7BA7EF00CCD0F3 /* BaseTableViewController.m */; };
+		79F7A4EF1C7BB25A00CCD0F3 /* CaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 79F7A4ED1C7BB25A00CCD0F3 /* CaseTableViewCell.m */; };
+		79F7A4F01C7BB25A00CCD0F3 /* CaseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79F7A4EE1C7BB25A00CCD0F3 /* CaseTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,20 +69,25 @@
 		79AB6A191C78C0FF00FCD7E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79AB6A341C78EDC800FCD7E2 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		79AB6A351C78EDC800FCD7E2 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
-		79AB6A361C78EDC800FCD7E2 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		79AB6A381C78EDC800FCD7E2 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		79AB6A391C78EDC800FCD7E2 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		79AB6A3D1C78EE7300FCD7E2 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
-		79C65BB91C7945C80063068C /* ExperimentCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExperimentCase.h; sourceTree = "<group>"; };
 		79C65BBB1C7945C80063068C /* ExperimentDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExperimentDataSource.h; sourceTree = "<group>"; };
 		79C65BBC1C7945C80063068C /* ExperimentDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExperimentDataSource.m; sourceTree = "<group>"; };
-		79C65BBD1C7945C80063068C /* ExperimentCaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExperimentCaseModel.h; sourceTree = "<group>"; };
-		79C65BBE1C7945C80063068C /* ExperimentCaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExperimentCaseModel.m; sourceTree = "<group>"; };
-		79C65BC21C7A21590063068C /* BasicObjectsExperiment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BasicObjectsExperiment.h; path = BasicObjectsExperiment/BasicObjectsExperiment.h; sourceTree = "<group>"; };
-		79C65BC31C7A21590063068C /* BasicObjectsExperiment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BasicObjectsExperiment.m; path = BasicObjectsExperiment/BasicObjectsExperiment.m; sourceTree = "<group>"; };
+		79C65BBD1C7945C80063068C /* ExperimentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExperimentModel.h; sourceTree = "<group>"; };
+		79C65BBE1C7945C80063068C /* ExperimentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExperimentModel.m; sourceTree = "<group>"; };
 		79F7A4D31C7B3BD200CCD0F3 /* ExperimentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExperimentTableViewCell.h; path = Views/ExperimentTableViewCell/ExperimentTableViewCell.h; sourceTree = "<group>"; };
 		79F7A4D41C7B3BD200CCD0F3 /* ExperimentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExperimentTableViewCell.m; path = Views/ExperimentTableViewCell/ExperimentTableViewCell.m; sourceTree = "<group>"; };
 		79F7A4D61C7B3DC800CCD0F3 /* ExperimentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ExperimentTableViewCell.xib; path = Views/ExperimentTableViewCell/ExperimentTableViewCell.xib; sourceTree = "<group>"; };
+		79F7A4DE1C7B878E00CCD0F3 /* BaseExperiment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseExperiment.h; sourceTree = "<group>"; };
+		79F7A4DF1C7B878E00CCD0F3 /* BaseExperiment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseExperiment.m; sourceTree = "<group>"; };
+		79F7A4E11C7B878E00CCD0F3 /* BasicObjectsExperiment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicObjectsExperiment.h; sourceTree = "<group>"; };
+		79F7A4E21C7B878E00CCD0F3 /* BasicObjectsExperiment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicObjectsExperiment.m; sourceTree = "<group>"; };
+		79F7A4E41C7B878E00CCD0F3 /* Experiment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Experiment.h; path = Experiments/Experiment.h; sourceTree = "<group>"; };
+		79F7A4E81C7BA7EF00CCD0F3 /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseTableViewController.h; path = BaseTableViewController/BaseTableViewController.h; sourceTree = "<group>"; };
+		79F7A4E91C7BA7EF00CCD0F3 /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseTableViewController.m; path = BaseTableViewController/BaseTableViewController.m; sourceTree = "<group>"; };
+		79F7A4EC1C7BB25A00CCD0F3 /* CaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CaseTableViewCell.h; path = Views/CaseTableViewCell/CaseTableViewCell.h; sourceTree = "<group>"; };
+		79F7A4ED1C7BB25A00CCD0F3 /* CaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CaseTableViewCell.m; path = Views/CaseTableViewCell/CaseTableViewCell.m; sourceTree = "<group>"; };
+		79F7A4EE1C7BB25A00CCD0F3 /* CaseTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CaseTableViewCell.xib; path = Views/CaseTableViewCell/CaseTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +217,7 @@
 		79AB6A2A1C78EC4000FCD7E2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				79F7A4E71C7BA7A600CCD0F3 /* BaseTableViewController */,
 				797AE3141C78F9EF005F9BDD /* BaseViewController */,
 				79AB6A331C78EDC800FCD7E2 /* DetailViewController */,
 				79AB6A371C78EDC800FCD7E2 /* MainViewController */,
@@ -223,7 +231,6 @@
 			children = (
 				79AB6A341C78EDC800FCD7E2 /* DetailViewController.h */,
 				79AB6A351C78EDC800FCD7E2 /* DetailViewController.m */,
-				79AB6A361C78EDC800FCD7E2 /* DetailViewController.xib */,
 			);
 			path = DetailViewController;
 			sourceTree = "<group>";
@@ -233,7 +240,6 @@
 			children = (
 				79AB6A381C78EDC800FCD7E2 /* MainViewController.h */,
 				79AB6A391C78EDC800FCD7E2 /* MainViewController.m */,
-				79AB6A3D1C78EE7300FCD7E2 /* MainViewController.xib */,
 			);
 			path = MainViewController;
 			sourceTree = "<group>";
@@ -241,20 +247,12 @@
 		79C65BAE1C790BF20063068C /* Experiments */ = {
 			isa = PBXGroup;
 			children = (
-				79C65BB81C7945C80063068C /* Cases */,
+				79F7A4DD1C7B878E00CCD0F3 /* BaseExperiment */,
+				79F7A4E01C7B878E00CCD0F3 /* BasicObjectsExperiment */,
 				79C65BBA1C7945C80063068C /* DataSource */,
+				79F7A4E41C7B878E00CCD0F3 /* Experiment.h */,
 			);
 			name = Experiments;
-			sourceTree = "<group>";
-		};
-		79C65BB81C7945C80063068C /* Cases */ = {
-			isa = PBXGroup;
-			children = (
-				79C65BC11C7A20ED0063068C /* BasicObjectsExperiment */,
-				79C65BB91C7945C80063068C /* ExperimentCase.h */,
-			);
-			name = Cases;
-			path = Experiments/Cases;
 			sourceTree = "<group>";
 		};
 		79C65BBA1C7945C80063068C /* DataSource */ = {
@@ -262,20 +260,11 @@
 			children = (
 				79C65BBB1C7945C80063068C /* ExperimentDataSource.h */,
 				79C65BBC1C7945C80063068C /* ExperimentDataSource.m */,
-				79C65BBD1C7945C80063068C /* ExperimentCaseModel.h */,
-				79C65BBE1C7945C80063068C /* ExperimentCaseModel.m */,
+				79C65BBD1C7945C80063068C /* ExperimentModel.h */,
+				79C65BBE1C7945C80063068C /* ExperimentModel.m */,
 			);
 			name = DataSource;
 			path = Experiments/DataSource;
-			sourceTree = "<group>";
-		};
-		79C65BC11C7A20ED0063068C /* BasicObjectsExperiment */ = {
-			isa = PBXGroup;
-			children = (
-				79C65BC21C7A21590063068C /* BasicObjectsExperiment.h */,
-				79C65BC31C7A21590063068C /* BasicObjectsExperiment.m */,
-			);
-			name = BasicObjectsExperiment;
 			sourceTree = "<group>";
 		};
 		79C65BC51C7A49A80063068C /* Misc */ = {
@@ -288,6 +277,7 @@
 		79C65BC71C7A5BA30063068C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				79F7A4EB1C7BB18000CCD0F3 /* CaseTableViewCell */,
 				79F7A4D21C7B2D9E00CCD0F3 /* ExperimentTableViewCell */,
 			);
 			name = Views;
@@ -301,6 +291,45 @@
 				79F7A4D61C7B3DC800CCD0F3 /* ExperimentTableViewCell.xib */,
 			);
 			name = ExperimentTableViewCell;
+			sourceTree = "<group>";
+		};
+		79F7A4DD1C7B878E00CCD0F3 /* BaseExperiment */ = {
+			isa = PBXGroup;
+			children = (
+				79F7A4DE1C7B878E00CCD0F3 /* BaseExperiment.h */,
+				79F7A4DF1C7B878E00CCD0F3 /* BaseExperiment.m */,
+			);
+			name = BaseExperiment;
+			path = Experiments/BaseExperiment;
+			sourceTree = "<group>";
+		};
+		79F7A4E01C7B878E00CCD0F3 /* BasicObjectsExperiment */ = {
+			isa = PBXGroup;
+			children = (
+				79F7A4E11C7B878E00CCD0F3 /* BasicObjectsExperiment.h */,
+				79F7A4E21C7B878E00CCD0F3 /* BasicObjectsExperiment.m */,
+			);
+			name = BasicObjectsExperiment;
+			path = Experiments/BasicObjectsExperiment;
+			sourceTree = "<group>";
+		};
+		79F7A4E71C7BA7A600CCD0F3 /* BaseTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				79F7A4E81C7BA7EF00CCD0F3 /* BaseTableViewController.h */,
+				79F7A4E91C7BA7EF00CCD0F3 /* BaseTableViewController.m */,
+			);
+			name = BaseTableViewController;
+			sourceTree = "<group>";
+		};
+		79F7A4EB1C7BB18000CCD0F3 /* CaseTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				79F7A4EC1C7BB25A00CCD0F3 /* CaseTableViewCell.h */,
+				79F7A4ED1C7BB25A00CCD0F3 /* CaseTableViewCell.m */,
+				79F7A4EE1C7BB25A00CCD0F3 /* CaseTableViewCell.xib */,
+			);
+			name = CaseTableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -406,12 +435,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79F7A4F01C7BB25A00CCD0F3 /* CaseTableViewCell.xib in Resources */,
 				79AB6A021C78C0FF00FCD7E2 /* LaunchScreen.storyboard in Resources */,
 				79AB69FF1C78C0FF00FCD7E2 /* Assets.xcassets in Resources */,
-				79AB6A3E1C78EE7300FCD7E2 /* MainViewController.xib in Resources */,
 				79AB69FA1C78C0FF00FCD7E2 /* Main.storyboard in Resources */,
 				79F7A4D71C7B3DC800CCD0F3 /* ExperimentTableViewCell.xib in Resources */,
-				79AB6A3B1C78EDC800FCD7E2 /* DetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,14 +467,17 @@
 				79AB69F41C78C0FF00FCD7E2 /* AppDelegate.m in Sources */,
 				797AE3131C78F923005F9BDD /* RootNavigationController.m in Sources */,
 				79F7A4D51C7B3BD200CCD0F3 /* ExperimentTableViewCell.m in Sources */,
-				79C65BC41C7A21590063068C /* BasicObjectsExperiment.m in Sources */,
 				79AB69FD1C78C0FF00FCD7E2 /* everything_about_objc.xcdatamodeld in Sources */,
+				79F7A4E61C7B878E00CCD0F3 /* BasicObjectsExperiment.m in Sources */,
 				79AB69F11C78C0FF00FCD7E2 /* main.m in Sources */,
 				79AB6A3C1C78EDC800FCD7E2 /* MainViewController.m in Sources */,
+				79F7A4EF1C7BB25A00CCD0F3 /* CaseTableViewCell.m in Sources */,
 				79C65BBF1C7945C80063068C /* ExperimentDataSource.m in Sources */,
+				79F7A4EA1C7BA7EF00CCD0F3 /* BaseTableViewController.m in Sources */,
 				797AE3171C78FA14005F9BDD /* BaseViewController.m in Sources */,
 				79AB6A3A1C78EDC800FCD7E2 /* DetailViewController.m in Sources */,
-				79C65BC01C7945C80063068C /* ExperimentCaseModel.m in Sources */,
+				79F7A4E51C7B878E00CCD0F3 /* BaseExperiment.m in Sources */,
+				79C65BC01C7945C80063068C /* ExperimentModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

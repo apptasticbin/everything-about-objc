@@ -10,15 +10,19 @@
 
 @implementation BasicObjectsExperiment
 
-+ (NSString *)caseName {
+#pragma mark - Experiment
+
++ (NSString *)displayName {
     return @"Basic Objects";
 }
 
-+ (NSString *)caseDescription {
++ (NSString *)displayDesc {
     return @"Try out APIs of basic objects: NSValue, NSString, NSNumber, etc.";
 }
 
-- (void)invokeCase {
+#pragma mark - Experiment Cases
+
+- (void)NSStringExperimentCase {
     
 }
 

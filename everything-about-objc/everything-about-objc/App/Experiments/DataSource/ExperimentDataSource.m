@@ -7,8 +7,8 @@
 //
 
 #import "ExperimentDataSource.h"
-#import "ExperimentCase.h"
-#import "ExperimentCaseModel.h"
+#import "Experiment.h"
+#import "ExperimentModel.h"
 #import <objc/objc-runtime.h>
 
 @interface ExperimentDataSource ()
@@ -47,8 +47,8 @@
     NSMutableArray *experiments = [NSMutableArray array];
     for (int index=0; index<bufferSize; index++) {
         Class classObject = buffer[index];
-        if (class_conformsToProtocol(classObject, @protocol(ExperimentCase))) {
-            ExperimentCaseModel *caseModel = [[ExperimentCaseModel alloc] initWithCaseClass:classObject];
+        if (class_conformsToProtocol(class_getSuperclass(classObject), @protocol(Experiment))) {
+            ExperimentModel *caseModel = [[ExperimentModel alloc] initWithExperimentClass:classObject];
             [experiments addObject:caseModel];
         }
     }

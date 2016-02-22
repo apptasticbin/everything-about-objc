@@ -7,16 +7,17 @@
 //
 
 #import "MainViewController.h"
-#import "ExperimentCaseModel.h"
+#import "DetailViewController.h"
+#import "ExperimentModel.h"
 #import "ExperimentDataSource.h"
 #import "ExperimentTableViewCell.h"
 
-static NSString * const ExperimentTableViewCellId = @"ExperimentTableViewCellId";
+NSString * const ExperimentTableViewCellId = @"ExperimentTableViewCellId";
+NSString * const ExperimentTableViewCellNibName = @"ExperimentTableViewCell";
 
-@interface MainViewController () <UITableViewDataSource, UITableViewDelegate, UIBarPositioningDelegate>
+@interface MainViewController ()<UITableViewDataSource, UITableViewDelegate, UIBarPositioningDelegate>
 
 @property(nonatomic, strong) UISearchBar *searchBar;
-@property(nonatomic, weak) IBOutlet UITableView *tableView;
 @property(nonatomic, strong) NSArray *experiments;
 
 @end
@@ -26,7 +27,6 @@ static NSString * const ExperimentTableViewCellId = @"ExperimentTableViewCellId"
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupSearchBar];
-    [self setupTableView];
     [self loadExperiments];
 }
 
@@ -36,13 +36,13 @@ static NSString * const ExperimentTableViewCellId = @"ExperimentTableViewCellId"
     }
 }
 
-- (void)setupTableView {
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
-    self.tableView.rowHeight = UITableViewAutomaticDimension;
-    self.tableView.estimatedRowHeight = 44.0f;
-    //NOTICE: remember to setup 'reuse identifier' in nib file
-    UINib *experimentTableViewCellNib = [UINib nibWithNibName:@"ExperimentTableViewCell" bundle:nil];
+- (void)setupTableViewCell {
+    /**NOTICE:
+     - remember to setup 'reuse identifier' in nib file
+     - pin subviews's vertical constrains to 'ContentView' WITHOUT margins.
+     - set title label's 'compression resistance' to high priority
+     */
+    UINib *experimentTableViewCellNib = [UINib nibWithNibName:ExperimentTableViewCellNibName bundle:nil];
     [self.tableView registerNib:experimentTableViewCellNib forCellReuseIdentifier:ExperimentTableViewCellId];
 }
 
@@ -51,7 +51,6 @@ static NSString * const ExperimentTableViewCellId = @"ExperimentTableViewCellId"
     __weak MainViewController *weakSelf = self;
     [dataSource loadExperimentsComplete:^(NSArray *experiments) {
         weakSelf.experiments = experiments;
-        [weakSelf.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
         [weakSelf.tableView reloadData];
     }];
 }
@@ -70,18 +69,28 @@ static NSString * const ExperimentTableViewCellId = @"ExperimentTableViewCellId"
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    ExperimentTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ExperimentTableViewCellId forIndexPath:indexPath];
+    ExperimentTableViewCell *cell =
+        [tableView dequeueReusableCellWithIdentifier:ExperimentTableViewCellId
+                                        forIndexPath:indexPath];
     if (!cell) {
-        cell = [[ExperimentTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ExperimentTableViewCellId];
-        cell.detailsLabel.numberOfLines = 0;
+        cell =
+            [[ExperimentTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                           reuseIdentifier:ExperimentTableViewCellId];
     }
-    ExperimentCaseModel *caseModel = self.experiments[indexPath.row];
-    cell.titleLabel.text = caseModel.caseName;
-    cell.detailsLabel.text = caseModel.caseDescription;
+    ExperimentModel *expModel = self.experiments[indexPath.row];
+    cell.titleLabel.text = expModel.displayName;
+    cell.detailsLabel.text = expModel.displayDesc;
     return cell;
 }
 
 #pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    ExperimentModel *expModel = [self.experiments objectAtIndex:indexPath.row];
+    DetailViewController *vc = [[DetailViewController alloc] init];
+    vc.expModel = expModel;
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 #pragma mark - UISearchBarDelegate
 

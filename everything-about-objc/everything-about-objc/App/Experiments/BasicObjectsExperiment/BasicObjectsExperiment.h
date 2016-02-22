@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ExperimentCase.h"
+#import "BaseExperiment.h"
 
-@interface BasicObjectsExperiment : NSObject<ExperimentCase>
+@interface BasicObjectsExperiment : BaseExperiment
 
 @end

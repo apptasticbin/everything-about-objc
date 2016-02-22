@@ -1,20 +1,18 @@
 //
-//  ExperimentTableViewCell.m
+//  CaseTableViewCell.m
 //  everything-about-objc
 //
 //  Created by Bin Yu on 22/02/16.
 //  Copyright © 2016 Bin Yu. All rights reserved.
 //
 
-#import "ExperimentTableViewCell.h"
+#import "CaseTableViewCell.h"
 
-@implementation ExperimentTableViewCell
+@implementation CaseTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     self.selectionStyle = UITableViewCellSelectionStyleDefault;
-    self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    self.detailsLabel.numberOfLines = 0;
 }
 
 @end

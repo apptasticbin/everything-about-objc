@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BaseViewController.h"
+#import "BaseTableViewController.h"
 
-@interface DetailViewController : BaseViewController
+@class ExperimentModel;
+
+@interface DetailViewController : BaseTableViewController
+
+@property(nonatomic, strong) ExperimentModel *expModel;
 
 @end

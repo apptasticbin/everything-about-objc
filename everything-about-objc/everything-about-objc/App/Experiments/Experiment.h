@@ -8,14 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol ExperimentCase <NSObject>
+@protocol Experiment <NSObject>
 
 @required
-+ (NSString *)caseName;
-+ (NSString *)caseDescription;
-- (void)invokeCase;
-
-@optional
-- (UIView *)caseGui;
++ (NSString *)displayName;
++ (NSString *)displayDesc;
 
 @end
