@@ -14,6 +14,7 @@
 
 @property(nonatomic, readonly, strong) NSString *displayName;
 @property(nonatomic, readonly, strong) NSString *displayDesc;
+@property(nonatomic, readonly, strong) NSArray *caseModels;
 
 - (instancetype)initWithExperimentClass:(Class)experimentClass;
 - (BaseExperiment *)experimentInstance;

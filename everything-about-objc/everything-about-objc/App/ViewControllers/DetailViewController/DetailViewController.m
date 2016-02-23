@@ -8,6 +8,7 @@
 
 #import "DetailViewController.h"
 #import "BaseExperiment.h"
+#import "CaseModel.h"
 #import "CaseTableViewCell.h"
 #import "ExperimentModel.h"
 #import <objc/objc-runtime.h>
@@ -15,9 +16,10 @@
 NSString * const CaseTableViewCellId = @"CaseTableViewCellId";
 NSString * const CaseTableViewCellNibName = @"CaseTableViewCell";
 
-@interface DetailViewController ()
+@interface DetailViewController ()<ExperimentDelegate>
 
-@property(nonatomic, strong) NSArray *caseSelectors;
+@property(nonatomic, strong) NSArray *caseModels;
+@property(nonatomic, strong) BaseExperiment *experiment;
 
 @end
 
@@ -25,12 +27,22 @@ NSString * const CaseTableViewCellNibName = @"CaseTableViewCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupNavigationBar];
+    [self setupExperiment];
     [self loadCaseSelectors];
 }
 
+- (void)setupNavigationBar {
+    self.navigationItem.title = self.expModel.displayName;
+}
+
+- (void)setupExperiment {
+    self.experiment = [self.expModel experimentInstance];
+    self.experiment.delegate = self;
+}
+
 - (void)loadCaseSelectors {
-    BaseExperiment *baseExp = [self.expModel experimentInstance];
-    self.caseSelectors = baseExp.caseSelectors;
+    self.caseModels = self.expModel.caseModels;
     [self.tableView reloadData];
 }
 
@@ -46,14 +58,10 @@ NSString * const CaseTableViewCellNibName = @"CaseTableViewCell";
 
 #pragma mark - Private
 
-- (NSString *)removeSuffix:(NSString *)suffix fromString:(NSString *)orig {
-    return [orig stringByReplacingOccurrencesOfString:suffix withString:@""];
-}
-
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.caseSelectors count];
+    return [self.caseModels count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -65,20 +73,16 @@ NSString * const CaseTableViewCellNibName = @"CaseTableViewCell";
             [[CaseTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
                                      reuseIdentifier:CaseTableViewCellId];
     }
-    SEL caseSelector;
-    [self.caseSelectors[indexPath.row] getValue:&caseSelector];
-    if (caseSelector) {
-        cell.textLabel.text =
-            [self removeSuffix:ExperimentCaseMethodSuffix
-                    fromString: NSStringFromSelector(caseSelector)];
-    }
+    CaseModel *caseModel = self.caseModels[indexPath.row];
+    cell.textLabel.text = caseModel.displayName;
     return cell;
 }
 
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-
+    SEL caseSelector = [self.caseModels[indexPath.row] caseSelector];
+    [self.experiment runExperimentCase:caseSelector];
 }
 
 

@@ -9,11 +9,7 @@
 #import "BaseExperiment.h"
 #import <objc/objc-runtime.h>
 
-NSString * const ExperimentCaseMethodSuffix = @"ExperimentCase";
-
 @interface BaseExperiment ()
-
-@property(nonatomic, readwrite, strong) NSArray *caseSelectors;
 
 @end
 
@@ -29,37 +25,12 @@ NSString * const ExperimentCaseMethodSuffix = @"ExperimentCase";
     return @"";
 }
 
-- (NSArray *)caseSelectors {
-    if (!_caseSelectors) {
-        _caseSelectors = [self filterCaseSelectors];
+- (void)runExperimentCase:(SEL)caseSelector
+{
+    NSLog(@"++++++++++++ %@ ++++++++++++", NSStringFromSelector(caseSelector));
+    if ([self respondsToSelector:caseSelector]) {
+        [self performSelector:caseSelector];
     }
-    return _caseSelectors;
-}
-
-#pragma mark - Private
-
-- (NSArray *)filterCaseSelectors {
-    unsigned int methodCount;
-    Method *methodList = class_copyMethodList(self.class, &methodCount);
-    NSMutableArray *methodSelectors = [NSMutableArray array];
-    if (methodCount) {
-        for (int index=0; index<methodCount; index++) {
-            Method method = methodList[index];
-            SEL methodSelector = method_getName(method);
-            NSString *selectorString = NSStringFromSelector(methodSelector);
-            if ([self isExperimentSelector:selectorString]) {
-                [methodSelectors
-                    addObject:[NSValue valueWithBytes:&methodSelector
-                                             objCType:@encode(SEL)]];
-            }
-        }
-    }
-    free(methodList);
-    return methodSelectors;
-}
-
-- (BOOL)isExperimentSelector:(NSString *)selectorString {
-    return [selectorString hasSuffix:ExperimentCaseMethodSuffix];
 }
 
 @end

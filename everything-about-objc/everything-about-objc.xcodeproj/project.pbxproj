@@ -28,6 +28,7 @@
 		79F7A4EA1C7BA7EF00CCD0F3 /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79F7A4E91C7BA7EF00CCD0F3 /* BaseTableViewController.m */; };
 		79F7A4EF1C7BB25A00CCD0F3 /* CaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 79F7A4ED1C7BB25A00CCD0F3 /* CaseTableViewCell.m */; };
 		79F7A4F01C7BB25A00CCD0F3 /* CaseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79F7A4EE1C7BB25A00CCD0F3 /* CaseTableViewCell.xib */; };
+		79F7A4FC1C7C5AA600CCD0F3 /* CaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 79F7A4FB1C7C5AA600CCD0F3 /* CaseModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,8 @@
 		79F7A4EC1C7BB25A00CCD0F3 /* CaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CaseTableViewCell.h; path = Views/CaseTableViewCell/CaseTableViewCell.h; sourceTree = "<group>"; };
 		79F7A4ED1C7BB25A00CCD0F3 /* CaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CaseTableViewCell.m; path = Views/CaseTableViewCell/CaseTableViewCell.m; sourceTree = "<group>"; };
 		79F7A4EE1C7BB25A00CCD0F3 /* CaseTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CaseTableViewCell.xib; path = Views/CaseTableViewCell/CaseTableViewCell.xib; sourceTree = "<group>"; };
+		79F7A4FA1C7C5AA600CCD0F3 /* CaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaseModel.h; sourceTree = "<group>"; };
+		79F7A4FB1C7C5AA600CCD0F3 /* CaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaseModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,6 +261,8 @@
 		79C65BBA1C7945C80063068C /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
+				79F7A4FA1C7C5AA600CCD0F3 /* CaseModel.h */,
+				79F7A4FB1C7C5AA600CCD0F3 /* CaseModel.m */,
 				79C65BBB1C7945C80063068C /* ExperimentDataSource.h */,
 				79C65BBC1C7945C80063068C /* ExperimentDataSource.m */,
 				79C65BBD1C7945C80063068C /* ExperimentModel.h */,
@@ -465,6 +470,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				79AB69F41C78C0FF00FCD7E2 /* AppDelegate.m in Sources */,
+				79F7A4FC1C7C5AA600CCD0F3 /* CaseModel.m in Sources */,
 				797AE3131C78F923005F9BDD /* RootNavigationController.m in Sources */,
 				79F7A4D51C7B3BD200CCD0F3 /* ExperimentTableViewCell.m in Sources */,
 				79AB69FD1C78C0FF00FCD7E2 /* everything_about_objc.xcdatamodeld in Sources */,

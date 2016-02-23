@@ -9,10 +9,18 @@
 #import <Foundation/Foundation.h>
 #import "Experiment.h"
 
-FOUNDATION_EXTERN NSString * const ExperimentCaseMethodSuffix;
+@protocol ExperimentDelegate<NSObject>
+
+@optional
+- (void)caseFinishedWithResultView:(UIView *)resultView;
+- (void)caseFinishedWithResultViewController:(UIViewController *)resultViewController;
+
+@end
 
 @interface BaseExperiment : NSObject<Experiment>
 
-@property(nonatomic, readonly, strong) NSArray *caseSelectors;
+@property(nonatomic, weak)id<ExperimentDelegate> delegate;
+
+- (void)runExperimentCase:(SEL)caseSelector;
 
 @end
