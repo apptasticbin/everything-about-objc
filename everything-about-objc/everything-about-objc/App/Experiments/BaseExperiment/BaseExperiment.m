@@ -27,7 +27,7 @@
 
 - (void)runExperimentCase:(SEL)caseSelector
 {
-    NSLog(@"++++++++++++ %@ ++++++++++++", NSStringFromSelector(caseSelector));
+    MLog(@"++++++++++++ %@ ++++++++++++", NSStringFromSelector(caseSelector));
     if ([self respondsToSelector:caseSelector]) {
         [self performSelector:caseSelector];
     }

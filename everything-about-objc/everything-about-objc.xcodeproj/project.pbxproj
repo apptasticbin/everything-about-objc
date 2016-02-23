@@ -91,6 +91,7 @@
 		79F7A4EE1C7BB25A00CCD0F3 /* CaseTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CaseTableViewCell.xib; path = Views/CaseTableViewCell/CaseTableViewCell.xib; sourceTree = "<group>"; };
 		79F7A4FA1C7C5AA600CCD0F3 /* CaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaseModel.h; sourceTree = "<group>"; };
 		79F7A4FB1C7C5AA600CCD0F3 /* CaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaseModel.m; sourceTree = "<group>"; };
+		79F7A4FE1C7CDCA700CCD0F3 /* MLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MLog.h; path = Misc/MLog/MLog.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +276,7 @@
 		79C65BC51C7A49A80063068C /* Misc */ = {
 			isa = PBXGroup;
 			children = (
+				79F7A4FD1C7CDC8900CCD0F3 /* MLog */,
 			);
 			name = Misc;
 			sourceTree = "<group>";
@@ -335,6 +337,14 @@
 				79F7A4EE1C7BB25A00CCD0F3 /* CaseTableViewCell.xib */,
 			);
 			name = CaseTableViewCell;
+			sourceTree = "<group>";
+		};
+		79F7A4FD1C7CDC8900CCD0F3 /* MLog */ = {
+			isa = PBXGroup;
+			children = (
+				79F7A4FE1C7CDCA700CCD0F3 /* MLog.h */,
+			);
+			name = MLog;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

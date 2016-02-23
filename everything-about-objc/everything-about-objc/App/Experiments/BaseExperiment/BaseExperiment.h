@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Experiment.h"
+#import "MLog.h"
 
 @protocol ExperimentDelegate<NSObject>
 
