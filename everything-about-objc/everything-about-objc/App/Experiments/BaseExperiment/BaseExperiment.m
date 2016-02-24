@@ -33,4 +33,12 @@
     }
 }
 
+- (void)showResultView:(UIView *)resultView {
+    if (self.delegate &&
+        [self.delegate
+            respondsToSelector:@selector(caseFinishedWithResultView:)]) {
+            [self.delegate caseFinishedWithResultView:resultView];
+    }
+}
+
 @end

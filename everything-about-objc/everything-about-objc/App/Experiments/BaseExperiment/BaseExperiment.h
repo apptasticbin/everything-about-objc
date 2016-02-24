@@ -23,5 +23,6 @@
 @property(nonatomic, weak)id<ExperimentDelegate> delegate;
 
 - (void)runExperimentCase:(SEL)caseSelector;
+- (void)showResultView:(UIView *)resultView;
 
 @end
