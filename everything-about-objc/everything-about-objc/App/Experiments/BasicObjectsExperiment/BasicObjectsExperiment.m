@@ -68,6 +68,10 @@ typedef struct {
     
     NSString *baseString = @"##abc efg abcd";
     NSString *searchString = @"abc";
+    /**
+     An NSRange structure giving the location and length in the receiver of the first occurrence of aString. 
+     Returns {NSNotFound, 0} if aString is not found or is empty (@"").
+     */
     NSRange searchRange = [baseString rangeOfString:searchString];
     MLog(@"Found substring '%@' from %lu to %lu", searchString, searchRange.location, NSMaxRange(searchRange));
     searchRange = [baseString rangeOfString:searchString options:NSBackwardsSearch];
