@@ -9,6 +9,7 @@
 #import "DetailViewController.h"
 #import "BaseExperiment.h"
 #import "CaseModel.h"
+#import "CaseResultViewController.h"
 #import "CaseTableViewCell.h"
 #import "ExperimentModel.h"
 #import <objc/objc-runtime.h>
@@ -58,6 +59,13 @@ NSString * const CaseTableViewCellNibName = @"CaseTableViewCell";
 
 #pragma mark - Private
 
+- (void)showResultObject:(id)resultObject {
+    CaseResultViewController *viewController = [CaseResultViewController new];
+    viewController.resultObject = resultObject;
+    viewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentViewController:viewController animated:YES completion:nil];
+}
+
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -83,6 +91,16 @@ NSString * const CaseTableViewCellNibName = @"CaseTableViewCell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     SEL caseSelector = [self.caseModels[indexPath.row] caseSelector];
     [self.experiment runExperimentCase:caseSelector];
+}
+
+#pragma mark - ExperimentDelegate
+
+- (void)caseFinishedWithResultView:(UIView *)resultView {
+    [self showResultObject:resultView];
+}
+
+- (void)caseFinishedWithResultViewController:(UIViewController *)resultViewController {
+    [self showResultObject:resultViewController];
 }
 
 

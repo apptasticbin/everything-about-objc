@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		791F1E361C7E5D1A00EB2CBF /* CollectionsExperiment.m in Sources */ = {isa = PBXBuildFile; fileRef = 791F1E351C7E5D1A00EB2CBF /* CollectionsExperiment.m */; };
+		791F1E3B1C8051D900EB2CBF /* CaseResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 791F1E3A1C8051D900EB2CBF /* CaseResultViewController.m */; };
 		797AE3131C78F923005F9BDD /* RootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 797AE3121C78F923005F9BDD /* RootNavigationController.m */; };
 		797AE3171C78FA14005F9BDD /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 797AE3161C78FA14005F9BDD /* BaseViewController.m */; };
 		79AB69F11C78C0FF00FCD7E2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 79AB69F01C78C0FF00FCD7E2 /* main.m */; };
@@ -52,6 +53,8 @@
 /* Begin PBXFileReference section */
 		791F1E341C7E5D1A00EB2CBF /* CollectionsExperiment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CollectionsExperiment.h; path = Experiments/CollectionsExperiment/CollectionsExperiment.h; sourceTree = "<group>"; };
 		791F1E351C7E5D1A00EB2CBF /* CollectionsExperiment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CollectionsExperiment.m; path = Experiments/CollectionsExperiment/CollectionsExperiment.m; sourceTree = "<group>"; };
+		791F1E391C8051D900EB2CBF /* CaseResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CaseResultViewController.h; path = CaseResultViewController/CaseResultViewController.h; sourceTree = "<group>"; };
+		791F1E3A1C8051D900EB2CBF /* CaseResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CaseResultViewController.m; path = CaseResultViewController/CaseResultViewController.m; sourceTree = "<group>"; };
 		797AE3111C78F923005F9BDD /* RootNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RootNavigationController.h; path = RootNavigationController/RootNavigationController.h; sourceTree = "<group>"; };
 		797AE3121C78F923005F9BDD /* RootNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RootNavigationController.m; path = RootNavigationController/RootNavigationController.m; sourceTree = "<group>"; };
 		797AE3151C78FA14005F9BDD /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseViewController.h; path = BaseViewController/BaseViewController.h; sourceTree = "<group>"; };
@@ -129,6 +132,15 @@
 				791F1E351C7E5D1A00EB2CBF /* CollectionsExperiment.m */,
 			);
 			name = CollectionsExperiment;
+			sourceTree = "<group>";
+		};
+		791F1E381C8051B000EB2CBF /* CaseResultViewController */ = {
+			isa = PBXGroup;
+			children = (
+				791F1E391C8051D900EB2CBF /* CaseResultViewController.h */,
+				791F1E3A1C8051D900EB2CBF /* CaseResultViewController.m */,
+			);
+			name = CaseResultViewController;
 			sourceTree = "<group>";
 		};
 		797AE3101C78F6AE005F9BDD /* RootNavigationController */ = {
@@ -235,6 +247,7 @@
 			children = (
 				79F7A4E71C7BA7A600CCD0F3 /* BaseTableViewController */,
 				797AE3141C78F9EF005F9BDD /* BaseViewController */,
+				791F1E381C8051B000EB2CBF /* CaseResultViewController */,
 				79AB6A331C78EDC800FCD7E2 /* DetailViewController */,
 				79AB6A371C78EDC800FCD7E2 /* MainViewController */,
 				797AE3101C78F6AE005F9BDD /* RootNavigationController */,
@@ -492,6 +505,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				791F1E3B1C8051D900EB2CBF /* CaseResultViewController.m in Sources */,
 				79AB69F41C78C0FF00FCD7E2 /* AppDelegate.m in Sources */,
 				79F7A4FC1C7C5AA600CCD0F3 /* CaseModel.m in Sources */,
 				791F1E361C7E5D1A00EB2CBF /* CollectionsExperiment.m in Sources */,
