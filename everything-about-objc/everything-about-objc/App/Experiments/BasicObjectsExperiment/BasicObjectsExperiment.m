@@ -7,28 +7,7 @@
 //
 
 #import "BasicObjectsExperiment.h"
-
-typedef struct {
-    int dummyIvar;
-} DummyStructure;
-
-@interface DummyObject : NSObject
-
-@property(nonatomic, assign) NSInteger dummyProperty;
-
-@end
-
-@implementation DummyObject
-
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        _dummyProperty = 10;
-    }
-    return self;
-}
-
-@end
+#import "DummyObject.h"
 
 @implementation BasicObjectsExperiment
 

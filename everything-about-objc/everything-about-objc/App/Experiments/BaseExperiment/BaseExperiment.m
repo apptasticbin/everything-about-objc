@@ -18,11 +18,11 @@
 #pragma mark - Experiment
 
 + (NSString *)displayName {
-    return @"";
+    @throw NSGenericException;
 }
 
 + (NSString *)displayDesc {
-    return @"";
+    @throw NSGenericException;
 }
 
 - (void)runExperimentCase:(SEL)caseSelector
