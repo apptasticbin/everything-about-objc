@@ -11,6 +11,6 @@
 
 @interface CaseResultViewController : BaseViewController
 
-@property(nonatomic, strong) id resultObject;
+@property(nonatomic, strong) UIView *resultView;
 
 @end

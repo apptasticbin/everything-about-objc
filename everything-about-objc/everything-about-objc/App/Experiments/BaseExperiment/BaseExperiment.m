@@ -41,4 +41,12 @@
     }
 }
 
+- (void)showResultViewController:(UIViewController *)resultViewController {
+    if (self.delegate &&
+        [self.delegate
+            respondsToSelector:@selector(caseFinishedWithResultViewController:)]) {
+            [self.delegate caseFinishedWithResultViewController:resultViewController];
+    }
+}
+
 @end

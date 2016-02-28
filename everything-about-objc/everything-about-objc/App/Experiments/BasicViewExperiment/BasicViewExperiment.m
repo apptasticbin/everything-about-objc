@@ -7,6 +7,7 @@
 //
 
 #import "BasicViewExperiment.h"
+#import "ViewGeometricViewController.h"
 
 @implementation BasicViewExperiment
 
@@ -18,8 +19,35 @@
     return @"Try out UIView related APIs";
 }
 
+/**
+ View Frame, Bound, Center, Coordination, contentMode, transform
+ */
 - (void)UIViewExperimentCase {
-    // View Frame, Bound, Center, Coordination, contentMode, transform
+    ViewGeometricViewController *geometricViewController = [ViewGeometricViewController new];
+    [self showResultViewController:geometricViewController];
+}
+
+- (void)UIControlExperimentCase {
+    
+}
+
+- (void)LayerAndCoreAnimationExperimentCase {
+    
+}
+
+- (void)ViewDrawCycelExperimentCase {
+    
+}
+
+- (void)ViewAnimationExperimentCase {
+    /**
+     UIView animation and nested animation
+     transitionWithView:duration:options:animations:completion:
+     */
+}
+
+- (void)HitTestExperimentCase {
+    
 }
 
 @end

@@ -86,6 +86,10 @@
     MLog(@"Fold string: %@", foldString);
 }
 
+- (void) NSStringFormatExperimentCase {
+    
+}
+
 - (void)NSNumberExperimentCase {
     NSNumber *charNumber = @('c');
     MLog(@"Character number: %@", charNumber);
@@ -158,6 +162,9 @@
     NSDate *laterDate = [NSDate dateWithTimeIntervalSinceNow:100];
     NSDate *earlierDate = [nowDate earlierDate:laterDate];
     MLog(@"Earlier date between %@ and %@: %@", nowDate, laterDate, earlierDate);
+    
+    NSDate *oneDayBefore = [NSDate dateWithTimeIntervalSinceNow:(-60*60*24)];
+    MLog(@"One day before date: %@", oneDayBefore);
 }
 
 - (void)NSCalendarExperimentCase {
@@ -176,7 +183,6 @@
     
     NSDate *firstMomentDate = [calendar startOfDayForDate:nowDate];
     MLog(@"First moment date of %@: %@", nowDate, firstMomentDate);
-    
     MLog(@"Is today in weekends: %@", [calendar isDateInWeekend:nowDate] ? @"YES" : @"NO");
 }
 
@@ -270,6 +276,10 @@
     MLog(@"My page query: %@", [myPageUrl query]);
     MLog(@"URL query allowing character set: %@", [NSCharacterSet URLQueryAllowedCharacterSet]);
     
+}
+
+- (void)ObjectInheritanceOrderExperimentCase {
+    // Object Allocation, Initialisation, Inheritance order
 }
 
 - (NSString *)stringFromComparisonResult:(NSComparisonResult)comparisonResult {

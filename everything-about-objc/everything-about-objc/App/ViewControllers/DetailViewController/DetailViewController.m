@@ -60,10 +60,15 @@ NSString * const CaseTableViewCellNibName = @"CaseTableViewCell";
 #pragma mark - Private
 
 - (void)showResultObject:(id)resultObject {
-    CaseResultViewController *viewController = [CaseResultViewController new];
-    viewController.resultObject = resultObject;
-    viewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    [self presentViewController:viewController animated:YES completion:nil];
+    UIViewController *presentViewController = nil;
+    if ([resultObject isKindOfClass:[UIView class]]) {
+        CaseResultViewController *viewController = [CaseResultViewController new];
+        viewController.resultView = resultObject;
+    } else {
+        presentViewController = resultObject;
+    }
+    presentViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentViewController:presentViewController animated:YES completion:nil];
 }
 
 #pragma mark - UITableViewDataSource

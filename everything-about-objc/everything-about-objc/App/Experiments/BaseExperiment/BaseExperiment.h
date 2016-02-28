@@ -24,5 +24,6 @@
 
 - (void)runExperimentCase:(SEL)caseSelector;
 - (void)showResultView:(UIView *)resultView;
+- (void)showResultViewController:(UIViewController *)resultViewController;
 
 @end

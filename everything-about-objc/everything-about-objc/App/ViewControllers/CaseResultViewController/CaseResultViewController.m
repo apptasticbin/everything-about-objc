@@ -12,7 +12,7 @@
 
 - (void)viewDidLoad {
     [self setupRootView];
-    [self setupResultObject];
+    [self setupResultView];
 
 }
 
@@ -25,21 +25,9 @@
     self.view.backgroundColor = [UIColor blackColor];
 }
 
-- (void)setupResultObject {
-    if ([self.resultObject isKindOfClass:[UIView class]]) {
-        [self setupResultView:self.resultObject];
-    }
-    if ([self.resultObject isKindOfClass:[UIViewController class]]) {
-        UIViewController *resultViewController  = self.resultObject;
-        [self addChildViewController:resultViewController];
-        [self setupResultView:resultViewController.view];
-        [resultViewController didMoveToParentViewController:self];
-    }
-}
-
 #pragma mark - Private
 
-- (void)setupResultView:(UIView *)resultView {
+- (void)setupResultView {
     /**
      - The content mode specifies how the cached bitmap of the view’s layer is adjusted when the view’s bounds change.
      - ######For an image view, this is talking about the image. For a view that draws its content, this is talking about the drawn content. ######
@@ -48,34 +36,27 @@
      If you can't achieve the layout you need using autoresizing masks,
      then you need to implement layoutSubviews and calculate the subview positions and frames manually
      */
-    resultView.contentMode = UIViewContentModeScaleAspectFit;
-    resultView.bounds = [self scaleBounds:resultView.bounds aspectFitBounds:self.view.bounds];
-    resultView.center = CGPointMake(CGRectGetMidX(self.view.bounds), CGRectGetMidY(self.view.bounds));
-    [self.view addSubview:resultView];
+    self.resultView.contentMode = UIViewContentModeScaleAspectFit;
+    self.resultView.bounds = [self scaleBounds:self.resultView.bounds aspectFitBounds:self.view.bounds];
+    self.resultView.center = CGPointMake(CGRectGetMidX(self.view.bounds), CGRectGetMidY(self.view.bounds));
+    [self.view addSubview:self.resultView];
 }
 
 - (CGRect)scaleBounds:(CGRect)rect aspectFitBounds:(CGRect)containerRect {
-    CGFloat ratio = [self widthHeightRatio:containerRect];
     CGRect scaleBounds = CGRectZero;
-    scaleBounds.size.width = containerRect.size.width;
-    scaleBounds.size.height = scaleBounds.size.width / ratio;
+    if (CGRectIsEmpty(rect)) {
+        scaleBounds.size.width = containerRect.size.width;
+        scaleBounds.size.height = scaleBounds.size.width;
+    } else {
+        CGFloat ratio = containerRect.size.width / rect.size.width;
+        scaleBounds.size.width = containerRect.size.width;
+        scaleBounds.size.height = rect.size.height * ratio;
+    }
     return CGRectIntegral(scaleBounds);
 }
 
 - (CGFloat)widthHeightRatio:(CGRect)bounds {
     return bounds.size.width / bounds.size.height;
-}
-
-#pragma mark - UIResponser
-
-/**
- - In Xcode 7, Apple has introduced 'Lightweight Generics' to Objective-C
- - In Objective-C, they will generate compiler warnings if there is a type mismatch
- - http://www.miqu.me/blog/2015/06/09/adopting-objectivec-generics/
- - http://stackoverflow.com/questions/848641/are-there-strongly-typed-collections-in-objective-c
- */
-- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
