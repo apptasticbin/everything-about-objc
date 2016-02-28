@@ -130,7 +130,7 @@ typedef NS_ENUM(NSUInteger, SliderTag) {
     NSURL *imageUrl =
         [NSURL URLWithString:@"http://i.dailymail.co.uk/i/pix/2015/07/31/09/2AFBF3E800000578-3180983-image-a-1_1438329950442.jpg"];
     NSData *imageData = [NSData dataWithContentsOfURL:imageUrl];
-//    self.imageView.contentMode = UIViewContentModeScaleAspectFill;
+    self.imageView.contentMode = UIViewContentModeScaleAspectFill;
     self.imageView.clipsToBounds = YES;
     self.imageView.layer.zPosition = -999;
     self.imageView.translatesAutoresizingMaskIntoConstraints = YES;

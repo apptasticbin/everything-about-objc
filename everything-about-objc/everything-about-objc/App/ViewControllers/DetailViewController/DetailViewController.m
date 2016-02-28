@@ -64,6 +64,7 @@ NSString * const CaseTableViewCellNibName = @"CaseTableViewCell";
     if ([resultObject isKindOfClass:[UIView class]]) {
         CaseResultViewController *viewController = [CaseResultViewController new];
         viewController.resultView = resultObject;
+        presentViewController = viewController;
     } else {
         presentViewController = resultObject;
     }
