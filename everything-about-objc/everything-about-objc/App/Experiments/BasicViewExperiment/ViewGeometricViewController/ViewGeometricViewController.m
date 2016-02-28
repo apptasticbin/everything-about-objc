@@ -38,6 +38,10 @@ typedef NS_ENUM(NSUInteger, SliderTag) {
  view.bounds determines all its subview's location(offset by bounds.origin), while bounds will not affect its own location in its superview.
  
  If you init a view with negative width and height, it will automatically changed to positive(which won't change the location), but its bounds.origin indicates the point that you start to "draw" the view.
+ 
+ http://stackoverflow.com/questions/1210047/cocoa-whats-the-difference-between-the-frame-and-the-bounds/28917673#28917673
+ 
+ NOTICE: bounds origin ONLY affects subviews (e.g. sub UIImageView), but doens't affect UIImage of UIImageView !!!
  */
 
 @implementation ViewGeometricViewController
