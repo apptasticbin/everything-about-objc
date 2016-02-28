@@ -23,10 +23,6 @@ typedef NS_ENUM(NSUInteger, SliderTag) {
     RotationSlider
 };
 
-@interface ViewGeometricViewController ()
-
-@end
-
 /**
  http://stackoverflow.com/questions/1210047/cocoa-whats-the-difference-between-the-frame-and-the-bounds/28917673#28917673
  Bounds.origin indicates the point that you "draw" the view,
@@ -43,6 +39,26 @@ typedef NS_ENUM(NSUInteger, SliderTag) {
  
  NOTICE: bounds origin ONLY affects subviews (e.g. sub UIImageView), but doens't affect UIImage of UIImageView !!!
  */
+
+/**
+ About tips of configuring scroll view by auto layout
+ https://spin.atomicobject.com/2014/03/05/uiscrollview-autolayout-ios/
+ */
+
+/**
+ Transport Security has Blocked a cleartext HTTP
+ http://stackoverflow.com/questions/31254725/transport-security-has-blocked-a-cleartext-http
+ */
+
+/**
+ Important: If a view’s transform property does not contain the identity transform, 
+ the frame of that view is undefined and so are the results of its autoresizing behaviors.
+ https://developer.apple.com/library/ios/documentation/WindowsViews/Conceptual/ViewPG_iPhoneOS/CreatingViews/CreatingViews.html#//apple_ref/doc/uid/TP40009503-CH5-SW15
+ */
+
+@interface ViewGeometricViewController ()
+
+@end
 
 @implementation ViewGeometricViewController
 
@@ -137,7 +153,12 @@ typedef NS_ENUM(NSUInteger, SliderTag) {
     self.imageView.contentMode = UIViewContentModeScaleAspectFill;
     self.imageView.clipsToBounds = YES;
     self.imageView.layer.zPosition = -999;
+    /**
+     https://developer.apple.com/library/watchos/documentation/UserExperience/Conceptual/AutolayoutPG/AdoptingAutoLayout/AdoptingAutoLayout.html
+     */
     self.imageView.translatesAutoresizingMaskIntoConstraints = YES;
+    self.imageView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin |
+                                      UIViewAutoresizingFlexibleRightMargin;
     self.imageView.image = [UIImage imageWithData:imageData];
     
     UIView *dummySubview = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
