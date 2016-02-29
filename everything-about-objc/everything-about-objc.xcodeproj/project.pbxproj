@@ -15,6 +15,8 @@
 		79079BBD1C82430D007B5511 /* ViewGeometricViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79079BBB1C82430D007B5511 /* ViewGeometricViewController.xib */; };
 		791F1E361C7E5D1A00EB2CBF /* CollectionsExperiment.m in Sources */ = {isa = PBXBuildFile; fileRef = 791F1E351C7E5D1A00EB2CBF /* CollectionsExperiment.m */; };
 		791F1E3B1C8051D900EB2CBF /* CaseResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 791F1E3A1C8051D900EB2CBF /* CaseResultViewController.m */; };
+		796F20391C84480900C62748 /* CustomDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 796F20381C84480900C62748 /* CustomDrawView.m */; };
+		796F203D1C84D2FA00C62748 /* CustomControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 796F203C1C84D2FA00C62748 /* CustomControl.m */; };
 		797AE3131C78F923005F9BDD /* RootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 797AE3121C78F923005F9BDD /* RootNavigationController.m */; };
 		797AE3171C78FA14005F9BDD /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 797AE3161C78FA14005F9BDD /* BaseViewController.m */; };
 		79AB69F11C78C0FF00FCD7E2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 79AB69F01C78C0FF00FCD7E2 /* main.m */; };
@@ -72,6 +74,10 @@
 		791F1E351C7E5D1A00EB2CBF /* CollectionsExperiment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CollectionsExperiment.m; path = Experiments/CollectionsExperiment/CollectionsExperiment.m; sourceTree = "<group>"; };
 		791F1E391C8051D900EB2CBF /* CaseResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CaseResultViewController.h; path = CaseResultViewController/CaseResultViewController.h; sourceTree = "<group>"; };
 		791F1E3A1C8051D900EB2CBF /* CaseResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CaseResultViewController.m; path = CaseResultViewController/CaseResultViewController.m; sourceTree = "<group>"; };
+		796F20371C84480900C62748 /* CustomDrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomDrawView.h; sourceTree = "<group>"; };
+		796F20381C84480900C62748 /* CustomDrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomDrawView.m; sourceTree = "<group>"; };
+		796F203B1C84D2FA00C62748 /* CustomControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomControl.h; path = Experiments/BasicViewExperiment/CustomControl/CustomControl.h; sourceTree = "<group>"; };
+		796F203C1C84D2FA00C62748 /* CustomControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomControl.m; path = Experiments/BasicViewExperiment/CustomControl/CustomControl.m; sourceTree = "<group>"; };
 		797AE3111C78F923005F9BDD /* RootNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RootNavigationController.h; path = RootNavigationController/RootNavigationController.h; sourceTree = "<group>"; };
 		797AE3121C78F923005F9BDD /* RootNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RootNavigationController.m; path = RootNavigationController/RootNavigationController.m; sourceTree = "<group>"; };
 		797AE3151C78FA14005F9BDD /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseViewController.h; path = BaseViewController/BaseViewController.h; sourceTree = "<group>"; };
@@ -147,6 +153,8 @@
 			children = (
 				79079BA01C810CF3007B5511 /* BasicViewExperiment.h */,
 				79079BA11C810CF3007B5511 /* BasicViewExperiment.m */,
+				796F203A1C84D2D400C62748 /* CustomControl */,
+				796F20361C84480900C62748 /* CustomDrawView */,
 				79079BB41C8242D0007B5511 /* DummyView */,
 				79079BB71C8242D0007B5511 /* ViewGeometricViewController */,
 			);
@@ -192,6 +200,25 @@
 				791F1E3A1C8051D900EB2CBF /* CaseResultViewController.m */,
 			);
 			name = CaseResultViewController;
+			sourceTree = "<group>";
+		};
+		796F20361C84480900C62748 /* CustomDrawView */ = {
+			isa = PBXGroup;
+			children = (
+				796F20371C84480900C62748 /* CustomDrawView.h */,
+				796F20381C84480900C62748 /* CustomDrawView.m */,
+			);
+			name = CustomDrawView;
+			path = Experiments/BasicViewExperiment/CustomDrawView;
+			sourceTree = "<group>";
+		};
+		796F203A1C84D2D400C62748 /* CustomControl */ = {
+			isa = PBXGroup;
+			children = (
+				796F203B1C84D2FA00C62748 /* CustomControl.h */,
+				796F203C1C84D2FA00C62748 /* CustomControl.m */,
+			);
+			name = CustomControl;
 			sourceTree = "<group>";
 		};
 		797AE3101C78F6AE005F9BDD /* RootNavigationController */ = {
@@ -563,6 +590,7 @@
 				791F1E3B1C8051D900EB2CBF /* CaseResultViewController.m in Sources */,
 				79079BBC1C82430D007B5511 /* ViewGeometricViewController.m in Sources */,
 				79079BA81C810EEF007B5511 /* CustomCollectionObject.m in Sources */,
+				796F20391C84480900C62748 /* CustomDrawView.m in Sources */,
 				79AB69F41C78C0FF00FCD7E2 /* AppDelegate.m in Sources */,
 				79F7A4FC1C7C5AA600CCD0F3 /* CaseModel.m in Sources */,
 				791F1E361C7E5D1A00EB2CBF /* CollectionsExperiment.m in Sources */,
@@ -573,6 +601,7 @@
 				79AB69F11C78C0FF00FCD7E2 /* main.m in Sources */,
 				79079BB81C8242D0007B5511 /* DummyView.m in Sources */,
 				79AB6A3C1C78EDC800FCD7E2 /* MainViewController.m in Sources */,
+				796F203D1C84D2FA00C62748 /* CustomControl.m in Sources */,
 				79F7A4EF1C7BB25A00CCD0F3 /* CaseTableViewCell.m in Sources */,
 				79C65BBF1C7945C80063068C /* ExperimentDataSource.m in Sources */,
 				79079BA21C810CF3007B5511 /* BasicViewExperiment.m in Sources */,

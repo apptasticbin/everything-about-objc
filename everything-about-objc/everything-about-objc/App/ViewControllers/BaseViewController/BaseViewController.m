@@ -7,6 +7,7 @@
 //
 
 #import "BaseViewController.h"
+#import "MLog.h"
 
 @interface BaseViewController ()
 
@@ -33,7 +34,12 @@
  - http://www.miqu.me/blog/2015/06/09/adopting-objectivec-generics/
  - http://stackoverflow.com/questions/848641/are-there-strongly-typed-collections-in-objective-c
  */
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+     MLog(@"Base View Controller handles touch began event");
+}
+
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    MLog(@"Base View Controller handles touch ended event");
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

@@ -11,9 +11,21 @@
 
 @interface BaseExperiment ()
 
+@property(nonatomic, assign) NSUInteger currentStepCount;
+@property(nonatomic, strong) NSArray<ExperimentCaseStep> *caseSteps;
+
 @end
 
 @implementation BaseExperiment
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _currentStepCount = 0;
+    }
+    return self;
+}
 
 #pragma mark - Experiment
 
@@ -25,9 +37,16 @@
     @throw NSGenericException;
 }
 
+- (void)setupCaseSteps:(NSArray<ExperimentCaseStep> *)steps forView:(UIView *)view {
+    self.caseSteps = steps;
+    UIGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(runSteps:)];
+    [view addGestureRecognizer:tapRecognizer];
+}
+
 - (void)runExperimentCase:(SEL)caseSelector
 {
     MLog(@"++++++++++++ %@ ++++++++++++", NSStringFromSelector(caseSelector));
+    [self resetCurrentStep];
     if ([self respondsToSelector:caseSelector]) {
         [self performSelector:caseSelector];
     }
@@ -47,6 +66,20 @@
             respondsToSelector:@selector(caseFinishedWithResultViewController:)]) {
             [self.delegate caseFinishedWithResultViewController:resultViewController];
     }
+}
+
+#pragma mark - Private
+
+- (void)resetCurrentStep {
+    self.caseSteps = nil;
+    self.currentStepCount = 0;
+}
+
+- (void)runSteps:(UIGestureRecognizer *)gestureRecognizer {
+    self.currentStepCount = self.currentStepCount % self.caseSteps.count;
+    ExperimentCaseStep currentStep = self.caseSteps[self.currentStepCount];
+    currentStep(gestureRecognizer.view);
+    self.currentStepCount++;
 }
 
 @end

@@ -73,6 +73,31 @@
     }
 }
 
+/**
+ Hit-Testing in iOS
+ http://smnh.me/hit-testing-in-ios/
+ - Hit-testing will decide if this view will handle touch event by touch event methods (touchesBegan, touchesEnd, etc)
+ - Note: for unknown reasons, the hit-testing is executed multiple times in a row. Yet, 
+ the determined hit-test view remains the same.
+ － depth-first traversal in reverse pre-order
+ */
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    DummyView *hitTestView = (DummyView *)[super hitTest:point withEvent:event];
+    return hitTestView;
+}
+
+- (void)touchesBegan:(NSSet<UITouch *>*)touches withEvent:(UIEvent *)event {
+    MLog(@"Touch began in: %@", self.name);
+}
+
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    MLog(@"Touch ended in: %@", self.name);
+}
+
+- (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    MLog(@"Touch cancelled in :%@", self.name);
+}
+
 - (void)drawRect:(CGRect)rect {
     
 }

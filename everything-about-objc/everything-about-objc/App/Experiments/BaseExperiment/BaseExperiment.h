@@ -18,6 +18,8 @@
 
 @end
 
+typedef void(^ExperimentCaseStep)(UIView *);
+
 @interface BaseExperiment : NSObject<Experiment>
 
 @property(nonatomic, weak)id<ExperimentDelegate> delegate;
@@ -25,5 +27,6 @@
 - (void)runExperimentCase:(SEL)caseSelector;
 - (void)showResultView:(UIView *)resultView;
 - (void)showResultViewController:(UIViewController *)resultViewController;
+- (void)setupCaseSteps:(NSArray<ExperimentCaseStep> *)steps forView:(UIView *)view;
 
 @end
