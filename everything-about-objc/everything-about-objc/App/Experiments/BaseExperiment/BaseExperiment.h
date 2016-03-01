@@ -29,4 +29,7 @@ typedef void(^ExperimentCaseStep)(UIView *);
 - (void)showResultViewController:(UIViewController *)resultViewController;
 - (void)setupCaseSteps:(NSArray<ExperimentCaseStep> *)steps forView:(UIView *)view;
 
+- (UIImage *)dummyImage;
+- (UIView *)rootView;
+
 @end

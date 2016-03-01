@@ -17,6 +17,7 @@
 		791F1E3B1C8051D900EB2CBF /* CaseResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 791F1E3A1C8051D900EB2CBF /* CaseResultViewController.m */; };
 		796F20391C84480900C62748 /* CustomDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 796F20381C84480900C62748 /* CustomDrawView.m */; };
 		796F203D1C84D2FA00C62748 /* CustomControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 796F203C1C84D2FA00C62748 /* CustomControl.m */; };
+		796F20411C85016400C62748 /* LayerExperiment.m in Sources */ = {isa = PBXBuildFile; fileRef = 796F20401C85016400C62748 /* LayerExperiment.m */; };
 		797AE3131C78F923005F9BDD /* RootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 797AE3121C78F923005F9BDD /* RootNavigationController.m */; };
 		797AE3171C78FA14005F9BDD /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 797AE3161C78FA14005F9BDD /* BaseViewController.m */; };
 		79AB69F11C78C0FF00FCD7E2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 79AB69F01C78C0FF00FCD7E2 /* main.m */; };
@@ -78,6 +79,8 @@
 		796F20381C84480900C62748 /* CustomDrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomDrawView.m; sourceTree = "<group>"; };
 		796F203B1C84D2FA00C62748 /* CustomControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomControl.h; path = Experiments/BasicViewExperiment/CustomControl/CustomControl.h; sourceTree = "<group>"; };
 		796F203C1C84D2FA00C62748 /* CustomControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomControl.m; path = Experiments/BasicViewExperiment/CustomControl/CustomControl.m; sourceTree = "<group>"; };
+		796F203F1C85016400C62748 /* LayerExperiment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LayerExperiment.h; path = Experiments/LayerExperiment/LayerExperiment.h; sourceTree = "<group>"; };
+		796F20401C85016400C62748 /* LayerExperiment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LayerExperiment.m; path = Experiments/LayerExperiment/LayerExperiment.m; sourceTree = "<group>"; };
 		797AE3111C78F923005F9BDD /* RootNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RootNavigationController.h; path = RootNavigationController/RootNavigationController.h; sourceTree = "<group>"; };
 		797AE3121C78F923005F9BDD /* RootNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RootNavigationController.m; path = RootNavigationController/RootNavigationController.m; sourceTree = "<group>"; };
 		797AE3151C78FA14005F9BDD /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseViewController.h; path = BaseViewController/BaseViewController.h; sourceTree = "<group>"; };
@@ -221,6 +224,15 @@
 			name = CustomControl;
 			sourceTree = "<group>";
 		};
+		796F203E1C85012D00C62748 /* LayerExperiment */ = {
+			isa = PBXGroup;
+			children = (
+				796F203F1C85016400C62748 /* LayerExperiment.h */,
+				796F20401C85016400C62748 /* LayerExperiment.m */,
+			);
+			name = LayerExperiment;
+			sourceTree = "<group>";
+		};
 		797AE3101C78F6AE005F9BDD /* RootNavigationController */ = {
 			isa = PBXGroup;
 			children = (
@@ -359,6 +371,7 @@
 				79079B9F1C810C9B007B5511 /* BasicViewExperiment */,
 				791F1E331C7E5CE900EB2CBF /* CollectionsExperiment */,
 				79C65BBA1C7945C80063068C /* DataSource */,
+				796F203E1C85012D00C62748 /* LayerExperiment */,
 				79F7A4E41C7B878E00CCD0F3 /* Experiment.h */,
 			);
 			name = Experiments;
@@ -596,6 +609,7 @@
 				791F1E361C7E5D1A00EB2CBF /* CollectionsExperiment.m in Sources */,
 				797AE3131C78F923005F9BDD /* RootNavigationController.m in Sources */,
 				79F7A4D51C7B3BD200CCD0F3 /* ExperimentTableViewCell.m in Sources */,
+				796F20411C85016400C62748 /* LayerExperiment.m in Sources */,
 				79AB69FD1C78C0FF00FCD7E2 /* everything_about_objc.xcdatamodeld in Sources */,
 				79F7A4E61C7B878E00CCD0F3 /* BasicObjectsExperiment.m in Sources */,
 				79AB69F11C78C0FF00FCD7E2 /* main.m in Sources */,

@@ -37,6 +37,8 @@
     @throw NSGenericException;
 }
 
+#pragma mark - Public
+
 - (void)setupCaseSteps:(NSArray<ExperimentCaseStep> *)steps forView:(UIView *)view {
     self.caseSteps = steps;
     UIGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(runSteps:)];
@@ -68,6 +70,21 @@
     }
 }
 
+#pragma mark - Generate dummy data
+
+- (UIImage *)dummyImage {
+    NSString *urlString = @"http://www.umbitious.com/media/16172/hello_world_crop.jpg";
+    NSData *helloWorldImageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlString]];
+    UIImage *helloWorldImage = [UIImage imageWithData:helloWorldImageData];
+    return helloWorldImage;
+}
+
+- (UIView *)rootView {
+    UIView *rootView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 300)];
+    rootView.backgroundColor = [UIColor whiteColor];
+    return rootView;
+}
+
 #pragma mark - Private
 
 - (void)resetCurrentStep {
@@ -77,6 +94,7 @@
 
 - (void)runSteps:(UIGestureRecognizer *)gestureRecognizer {
     self.currentStepCount = self.currentStepCount % self.caseSteps.count;
+    MLog(@"Step %lu", self.currentStepCount);
     ExperimentCaseStep currentStep = self.caseSteps[self.currentStepCount];
     currentStep(gestureRecognizer.view);
     self.currentStepCount++;
