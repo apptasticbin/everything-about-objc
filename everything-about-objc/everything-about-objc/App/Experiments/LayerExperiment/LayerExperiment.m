@@ -84,6 +84,11 @@
        ^(UIView *view) {
            /**
             http://stackoverflow.com/questions/16512761/calayer-with-transparent-hole-in-it
+            The even-odd rule is simply this:
+            
+            As you progress in a straight line across the canvas containing the path,
+            count the number of times you cross the path. If you have crossed an odd number of times,
+            you are "inside" the path. If you have crossed an even number of times, you are outside the path.
             */
            CAShapeLayer *holeShapeLayer = [CAShapeLayer layer];
            // Center the hole rect in the middle
@@ -106,22 +111,36 @@
     [self showResultView:rootView];
 }
 
-- (void)ShapeLayerExperimentCase {
-    /**
-     The even-odd rule is simply this:
-     
-     As you progress in a straight line across the canvas containing the path, 
-     count the number of times you cross the path. If you have crossed an odd number of times, 
-     you are "inside" the path. If you have crossed an even number of times, you are outside the path.
-     */
+- (void)CAEmitterLayerExperimentCase {
+    
 }
 
-- (void)CoreAnimationWithLayerExperimentCase {
-    // Core Animation, Layers, Anchor points, transform, Path, CABasicAnimation, CAKeyFrameAnimation
+- (void)CAGradientLayerExperimentCase {
+    
 }
 
-- (void)CoreAnimationPausingWithLayerExperimentCase {
-    // Pause and resume layer animations ( try to understand timeOffset, beginTime)
+- (void)CAReplicatorLayerExperimentCase {
+    
+}
+
+- (void)CAScrollLayerExperimentCase {
+    
+}
+
+- (void)CAShapeLayerExperimentCase {
+    
+}
+
+- (void)CATextLayerExperimentCase {
+    
+}
+
+- (void)CATiledLayerExperimentCase {
+    
+}
+
+- (void)CATransformLayerExperimentCase {
+    
 }
 
 - (void)CustomLayerAction {
