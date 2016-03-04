@@ -80,6 +80,8 @@
     @[
       ^(UIView *view) {
           /**
+           https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/CoreAnimation_guide/AdvancedAnimationTricks/AdvancedAnimationTricks.html#//apple_ref/doc/uid/TP40004514-CH8-SW1
+           
            a transition animation manipulates a layer’s cached image to create visual effects that would be difficult 
            or impossible to do by changing properties alone
            
@@ -99,11 +101,31 @@
           redView.hidden = YES;
           blueView.hidden = NO;
           
-      }
+      },
+       ^(UIView *view) {
+           /**
+            http://blog.csdn.net/hello_hwc/article/details/47363645
+            animate layer content
+            */
+           UIImage *imageView = [self dummyImage];
+           
+           CATransition *fadeTransition = [CATransition animation];
+           fadeTransition.startProgress = 0;
+           fadeTransition.endProgress = 1.0f;
+           fadeTransition.duration = 2.0f;
+           fadeTransition.type = kCATransitionFade;
+           
+           [blueView.layer addAnimation:fadeTransition forKey:@"fade"];
+           blueView.layer.contents = (id)[imageView CGImage];
+       }
        ];
     
     [self setupCaseSteps:steps forView:rootView];
     [self showResultView:rootView];
+}
+
+- (void)CATransactionExperimentCase {
+    
 }
 
 - (void)AnimationPausingExperimentCase {
