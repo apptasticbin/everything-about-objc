@@ -85,6 +85,24 @@
     return rootView;
 }
 
+- (CALayer *)dummyLayerAtPosition:(CGPoint)position inView:(UIView *)view withColor:(UIColor *)color {
+    CALayer *dummyLayer = [CALayer layer];
+    dummyLayer.position = position;
+    dummyLayer.bounds = CGRectMake(0, 0, 150, 150);
+    dummyLayer.backgroundColor = [color CGColor];
+    [view.layer addSublayer:dummyLayer];
+    return dummyLayer;
+}
+
+- (UIView *)dummyViewAtPosition:(CGPoint)center inView:(UIView *)view withColor:(UIColor *)color {
+    UIView *dummyView = [UIView new];
+    dummyView.center = center;
+    dummyView.bounds = CGRectMake(0, 0, 150, 150);
+    dummyView.backgroundColor = color;
+    [view addSubview:dummyView];
+    return dummyView;
+}
+
 #pragma mark - Private
 
 - (void)resetCurrentStep {

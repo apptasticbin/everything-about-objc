@@ -28,6 +28,8 @@ typedef void(^ExperimentCaseStep)(UIView *);
 - (void)showResultView:(UIView *)resultView;
 - (void)showResultViewController:(UIViewController *)resultViewController;
 - (void)setupCaseSteps:(NSArray<ExperimentCaseStep> *)steps forView:(UIView *)view;
+- (CALayer *)dummyLayerAtPosition:(CGPoint)position inView:(UIView *)view withColor:(UIColor *)color;
+- (UIView *)dummyViewAtPosition:(CGPoint)center inView:(UIView *)view withColor:(UIColor *)color;
 
 - (UIImage *)dummyImage;
 - (UIView *)rootView;

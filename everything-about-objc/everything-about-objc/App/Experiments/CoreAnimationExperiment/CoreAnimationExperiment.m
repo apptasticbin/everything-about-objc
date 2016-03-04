@@ -69,7 +69,41 @@
 }
 
 - (void)CATransitionExperimentCase {
+    UIView *rootView = [self rootView];
+    UIView *redView =
+    [self dummyViewAtPosition:rootView.center inView:rootView withColor:[UIColor redColor]];
+    UIView *blueView =
+    [self dummyViewAtPosition:rootView.center inView:rootView withColor:[UIColor blueColor]];
+    blueView.hidden = YES;
     
+    NSArray<ExperimentCaseStep> *steps =
+    @[
+      ^(UIView *view) {
+          /**
+           a transition animation manipulates a layer’s cached image to create visual effects that would be difficult 
+           or impossible to do by changing properties alone
+           
+           seems that if using two layers belong to same view (instead of two views), system will be lazy, and dirrectly
+           finish hidden animation. That's why we need to seperate two layers into two views.
+           */
+          CATransition *pushTransition = [CATransition animation];
+          pushTransition.startProgress = 0.0f;
+          pushTransition.endProgress = 1.0f;
+          pushTransition.duration = 2.0f;
+          pushTransition.type = kCATransitionPush;
+          pushTransition.subtype = kCATransitionFromRight;
+          
+          [redView.layer addAnimation:pushTransition forKey:@"transition"];
+          [blueView.layer addAnimation:pushTransition forKey:@"transition"];
+          
+          redView.hidden = YES;
+          blueView.hidden = NO;
+          
+      }
+       ];
+    
+    [self setupCaseSteps:steps forView:rootView];
+    [self showResultView:rootView];
 }
 
 - (void)AnimationPausingExperimentCase {
