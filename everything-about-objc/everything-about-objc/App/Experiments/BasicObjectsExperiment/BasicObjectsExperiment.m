@@ -24,6 +24,7 @@
 #pragma mark - Experiment Cases
 
 - (void)NSStringExperimentCase {
+    // String operations; NSRange; Format Specifiers; Search, Comparing and sorting
     NSString *normalString = @"0123456789";
     MLog(@"Created a string: \"%@\"", normalString);
     unichar numberThreeCharacter = [normalString characterAtIndex:3];
@@ -257,6 +258,34 @@
          NSStringFromRange(anotherRange),
          NSStringFromRange(NSIntersectionRange(range, anotherRange))
          );
+}
+
+- (void)NSScannerExperimentCase {
+    NSScanner *scanner = [[NSScanner alloc] initWithString:@"123.4abc432"];
+    NSInteger scannedInteger;
+    [scanner scanInteger:&scannedInteger];
+    MLog(@"Scan integer: %ld, current location: %lu", scannedInteger, [scanner scanLocation]);
+    
+    CGFloat scannedDouble;
+    [scanner scanDouble:&scannedDouble];
+    MLog(@"Scan double: %f, current location: %lu", scannedDouble, [scanner scanLocation]);
+    
+    /** 
+     the substring MUST starts matching at the start position;
+     otherwise can not be found
+     */
+    
+    NSString *scannedString;
+    [scanner scanString: @"abc4" intoString: &scannedString];
+    MLog(@"Scan string: %@, current location: %lu", scannedString, [scanner scanLocation]);
+    
+    /**
+     scanning stops at the unmatching location.
+     */
+    [scanner setScanLocation:0];
+    NSString *scannedCharacter;
+    [scanner scanCharactersFromSet:[NSCharacterSet alphanumericCharacterSet] intoString:&scannedCharacter];
+    MLog(@"Scan character: %@, current location: %lu", scannedCharacter, [scanner scanLocation]);
 }
 
 - (void)NSURLExperimentCase {
