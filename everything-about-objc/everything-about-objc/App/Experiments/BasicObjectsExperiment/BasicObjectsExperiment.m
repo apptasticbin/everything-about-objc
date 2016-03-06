@@ -288,6 +288,19 @@
     MLog(@"Scan character: %@, current location: %lu", scannedCharacter, [scanner scanLocation]);
 }
 
+- (void)NSCharacterSetExperimentCase {
+    /**
+     Make mutable copy to create custom character set
+     */
+    NSMutableCharacterSet *customCharacterSet = [[NSCharacterSet whitespaceCharacterSet] mutableCopy];
+    NSString *dummyString = @"a, b, c, d, e";
+    NSArray *components = [dummyString componentsSeparatedByCharactersInSet:customCharacterSet];
+    MLog(@"Components seperated by white space: %@", components);
+    [customCharacterSet addCharactersInString:@","];
+    components = [dummyString componentsSeparatedByCharactersInSet:customCharacterSet];
+    MLog(@"Components seperated by white space and coma: %@", components);
+}
+
 - (void)NSURLExperimentCase {
     NSString *baseUrlString = @"https://www.facebook.com";
     NSString *myPageUrlString = [baseUrlString stringByAppendingPathComponent:@"abc efg"];
