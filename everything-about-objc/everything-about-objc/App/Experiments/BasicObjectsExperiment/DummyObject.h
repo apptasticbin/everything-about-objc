@@ -12,8 +12,25 @@ typedef struct {
     int dummyIvar;
 } DummyStructure;
 
-@interface DummyObject : NSObject
+@interface DummyGrandParentObject : NSObject
+
+- (void)dummyGrandParentMethod;
+- (void)commonMethod;
+
+@end
+
+@interface DummyParentObject : DummyGrandParentObject
+
+- (void)dummyParentMethod;
+- (void)commonMethod;
+
+@end
+
+@interface DummyObject : DummyParentObject
 
 @property(nonatomic, assign) NSInteger dummyProperty;
+
++ (instancetype)sharedObject;
+- (void)commonMethod;
 
 @end

@@ -280,7 +280,23 @@
 
 - (void)ObjectInheritanceOrderExperimentCase {
     // Object Allocation, Initialisation, Inheritance order
+    MLog(@"Order of initializing derived object");
+    DummyObject *dummyObject = [DummyObject new];
+    MLog(@"Call parent methods");
+    [dummyObject commonMethod];
+    [dummyObject dummyParentMethod];
+    [dummyObject dummyGrandParentMethod];
 }
+
+- (void)SingletonExperimentCase {
+    DummyObject *dummySingleton = [DummyObject sharedObject];
+    MLog(@"Dummy singleton value: %ld", dummySingleton.dummyProperty);
+    DummyObject *anotherDummySingleton = [DummyObject sharedObject];
+    anotherDummySingleton.dummyProperty = 99;
+    MLog(@"Dummy singleton value: %ld", dummySingleton.dummyProperty);
+}
+
+#pragma mark - Helper
 
 - (NSString *)stringFromComparisonResult:(NSComparisonResult)comparisonResult {
     switch (comparisonResult) {
