@@ -49,4 +49,8 @@
 #define MCLog(...)
 #endif
 
-#define NSLog(...) NSLog-Depricated
+// #define NSLog(...) NSLog-Depricated
+
+// helper marcro
+
+#define MARK MLog(@"%@ => %@", NSStringFromClass(self.class), NSStringFromSelector(_cmd))
