@@ -117,7 +117,7 @@
     NSValue *dataValue = [NSValue valueWithCGPoint:CGPointMake(1.0f, 2.0f)];
     MLog(@"Point value: %@", dataValue);
     
-    /** valueWithNonretainedObject: add object that not conform <NSCoding> protocol to collection
+    /** valueWithNonretainedObject: add object that not conform <NSCopying> protocol to collection
         NOTICE: this method DOES NOT retain object. You need to retain it yourself.
      */
     DummyObject *dummyObject = [DummyObject new];
@@ -318,6 +318,15 @@
     MLog(@"My page query: %@", [myPageUrl query]);
     MLog(@"URL query allowing character set: %@", [NSCharacterSet URLQueryAllowedCharacterSet]);
     
+}
+
+- (void)RandomNumberGeneration {
+    /**
+     http://nshipster.cn/random/
+     - arc4random returns an integer between 0 and (2^32)-1 while arc4random_uniform 
+     returns an integer between 0 and the upper bound you pass it
+     - arc4random: 0 ~ N-1
+     */
 }
 
 - (void)ObjectInheritanceOrderExperimentCase {
