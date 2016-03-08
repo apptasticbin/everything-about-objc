@@ -7,6 +7,18 @@
 //
 
 #import "ConcurrentExperiment.h"
+#import "CustomOperation.h"
+
+/**
+ https://www.objc.io/issues/2-concurrency/common-background-practices/
+ Operation Queues vs. Grand Central Dispatch
+ - operation queues offers 'cancel'
+ - operation queues easily handle dependancy
+ */
+
+@interface ConcurrentExperiment ()<NSPortDelegate>
+
+@end
 
 @implementation ConcurrentExperiment
 
@@ -17,6 +29,8 @@
 + (NSString *)displayDesc {
     return @"Try out Grand Central Dispatch, NSOperation, and Runloop";
 }
+
+#pragma mark - Grand Central Dispatch
 
 - (void)GCDBasicExperimentCase {
     /**
@@ -151,6 +165,163 @@
 
 - (void)GCDDispatchSourceExperimentCase {
     
+}
+
+#pragma mark - NSOperation
+
+- (void)NSOperationBasicExperimentCase {
+    /**
+     http://nshipster.com/nsoperation/
+     - An operation queue is the Cocoa equivalent of a concurrent dispatch queue 
+     and is implemented by the NSOperationQueue class
+     - 'mainQueue' => 'main dispatch queue': The returned queue executes one operation at a time on the app’s main thread
+     */
+    
+    // NSBlockOperation
+    static NSBlockOperation *dummyBlockOperation;
+    dummyBlockOperation = [NSBlockOperation blockOperationWithBlock:^{
+        NSLog(@"block operation started");
+        [NSThread sleepForTimeInterval:2];
+    }];
+    dummyBlockOperation.queuePriority = NSOperationQueuePriorityNormal;
+    dummyBlockOperation.completionBlock = ^(void) {
+        NSLog(@"block operation ended");
+    };
+    
+    /**
+     NOTICE: 
+     - Whether the change dictionaries sent in notifications should contain NSKeyValueChangeNewKey and NSKeyValueChangeOldKey entries, respectively
+     - Key path name is 'isReady', not 'ready'
+     */
+    [dummyBlockOperation addObserver:self forKeyPath:@"isReady"
+                             options:NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew
+                             context:NULL];
+    
+    // NSInvocationOperation
+    NSInvocationOperation *dummyInvocationOperation =
+    [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(invocationOperationHandler) object:nil];
+    dummyInvocationOperation.queuePriority = NSOperationQueuePriorityHigh;
+    
+    // Custom Operation
+    NSString *urlString = @"http://www.facequebeauty.com.au/images/beauty-salon.jpg";
+    CustomOperation *dummyCustomOperation =
+        [[CustomOperation alloc] initWithImageURL:[NSURL URLWithString:urlString]];
+    // prevent cycling reference
+    __weak CustomOperation *weakOperation = dummyCustomOperation;
+    // cache result image from operation
+    __block UIImage *resultImage;
+    dummyCustomOperation.completionBlock = ^(void) {
+        MLog(@"Custom image downloaded");
+        resultImage = weakOperation.image;
+    };
+    /**
+     - By default, operation queue is CONCURRENT queue.
+     - main queue is SERIAL queue.
+     - An NSOperationQueue does not dequeue an operation until finished changes to true, 
+     so it is critical to implement this correctly in subclasses to avoid deadlock
+     */
+    NSOperationQueue *operationQueue = [NSOperationQueue new];
+    // Create dependency for controlling the order of operations
+    [dummyBlockOperation addDependency:dummyInvocationOperation];
+    [operationQueue addOperation:dummyBlockOperation];
+    [operationQueue addOperation:dummyInvocationOperation];
+    [operationQueue addOperation:dummyCustomOperation];
+    
+    // NOTICE: doesn't work on main queue
+    [operationQueue waitUntilAllOperationsAreFinished];
+    MLog(@"All operations finished");
+    [self showResultView:[[UIImageView alloc] initWithImage:resultImage]];
+}
+
+#pragma mark - NSRunLoop
+
+/**
+ https://www.objc.io/issues/2-concurrency/concurrency-apis-and-pitfalls/
+ - A run loop is an event processing loop that you use to schedule
+ work and coordinate the receipt of incoming events.
+ - The purpose of a run loop is to keep your thread busy when there
+ is work to do and put your thread to sleep when there is none
+ - A run loop is always bound to one particular thread.
+ The main run loop associated with the main thread has a central role
+ in each Cocoa and CocoaTouch application, because it handles UI events, timers,
+ and other kernel events.
+ - Whenever you 'schedule a timer', use a 'NSURLConnection'. or call
+ 'performSelector:withObject:afterDelay:', the run loop is used behind
+ the scenes in order to perform these asynchronous tasks
+ - add at least one input source to it. If a run loop has no input sources configured,
+ every attempt to run it will exit immediately
+ */
+
+/**
+ - your code provides the while or for loop that drives the run loop.
+ - Within your loop, you use a run loop object to "run” the event-processing
+ code that receives events and calls the installed handlers
+ - input source & time source
+ - A run loop mode is a collection of input sources and timers to be monitored
+ and a collection of run loop observers to be notified
+ - a default mode and several commonly used modes
+ - must be sure to add one or more input sources, timers,
+ or run-loop observers to any modes you create for them to be useful
+ - Perform Selector Sources: 'performSelector:withObject:afterDelay:'
+ - The run loop processes ALL queued perform selector calls each time through the loop,
+ rather than processing one during each loop iteration
+ - The run method of UIApplication in iOS starts an application’s main loop as part of the normal startup sequence
+ */
+
+- (void)NSRunLoopPortBasedInputSourceExperimentCase {
+    // port-based input source
+    // NOTICE: http://stackoverflow.com/questions/12384210/is-nsportmessage-in-the-ios-api
+    NSPort *dummyMasterPort = [NSMachPort port];
+    dummyMasterPort.delegate = self;
+    if (dummyMasterPort) {
+        NSRunLoop *dummyRunLoop = [NSRunLoop currentRunLoop];
+        [dummyRunLoop addPort:dummyMasterPort forMode:NSDefaultRunLoopMode];
+    }
+}
+
+- (void)NSRunLoopTimerInputSourceExperimentCase {
+    // Manually add timer to run loop
+    NSRunLoop *dummyRunLoop = [NSRunLoop currentRunLoop];
+    NSDate *afterOneSecond = [NSDate dateWithTimeIntervalSinceNow:1.0f];
+    NSTimer *dummyTimer =
+        [[NSTimer alloc] initWithFireDate:afterOneSecond
+                                 interval:0.5f
+                                   target:self
+                                 selector:@selector(timerHandler)
+                                 userInfo:nil
+                                  repeats:YES];
+    MLog(@"Added timer to current run loop");
+    [dummyRunLoop addTimer:dummyTimer forMode:NSDefaultRunLoopMode];
+    
+    // use NSTimer class method
+    [NSTimer scheduledTimerWithTimeInterval:0.5
+                                     target:self
+                                   selector:@selector(timerHandler)
+                                   userInfo:nil
+                                    repeats:YES];
+}
+
+#pragma mark - KVO
+
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary<NSString *,id> *)change
+                       context:(void *)context {
+    id newValue = change[NSKeyValueChangeNewKey];
+    MLog(@"Value of key path '%@' of object '%@': %@", keyPath, NSStringFromClass([object class]), newValue);
+}
+
+#pragma mark - Private
+
+- (void)timerHandler {
+    static NSInteger counter = 0;
+    MLog(@"tic toc %ld", ++counter);
+}
+
+- (void)invocationOperationHandler {
+    NSLog(@"invocation operation started");
+    [NSThread sleepForTimeInterval:4];
+    NSLog(@"invocation operation ended");
 }
 
 @end

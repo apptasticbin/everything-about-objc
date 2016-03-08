@@ -34,6 +34,7 @@
 		79C65BBF1C7945C80063068C /* ExperimentDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C65BBC1C7945C80063068C /* ExperimentDataSource.m */; };
 		79C65BC01C7945C80063068C /* ExperimentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C65BBE1C7945C80063068C /* ExperimentModel.m */; };
 		79EB01C71C8CAFAF0010AC27 /* ConcurrentExperiment.m in Sources */ = {isa = PBXBuildFile; fileRef = 79EB01C61C8CAFAF0010AC27 /* ConcurrentExperiment.m */; };
+		79EB01E31C8F4EC50010AC27 /* CustomOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 79EB01E21C8F4EC50010AC27 /* CustomOperation.m */; };
 		79F7A4D51C7B3BD200CCD0F3 /* ExperimentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 79F7A4D41C7B3BD200CCD0F3 /* ExperimentTableViewCell.m */; };
 		79F7A4D71C7B3DC800CCD0F3 /* ExperimentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79F7A4D61C7B3DC800CCD0F3 /* ExperimentTableViewCell.xib */; };
 		79F7A4E51C7B878E00CCD0F3 /* BaseExperiment.m in Sources */ = {isa = PBXBuildFile; fileRef = 79F7A4DF1C7B878E00CCD0F3 /* BaseExperiment.m */; };
@@ -114,6 +115,8 @@
 		79C65BBE1C7945C80063068C /* ExperimentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExperimentModel.m; sourceTree = "<group>"; };
 		79EB01C51C8CAFAF0010AC27 /* ConcurrentExperiment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConcurrentExperiment.h; path = Experiments/ConcurrentExperiment/ConcurrentExperiment.h; sourceTree = "<group>"; };
 		79EB01C61C8CAFAF0010AC27 /* ConcurrentExperiment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConcurrentExperiment.m; path = Experiments/ConcurrentExperiment/ConcurrentExperiment.m; sourceTree = "<group>"; };
+		79EB01E11C8F4EC50010AC27 /* CustomOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomOperation.h; path = Experiments/ConcurrentExperiment/CustomOperation/CustomOperation.h; sourceTree = "<group>"; };
+		79EB01E21C8F4EC50010AC27 /* CustomOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomOperation.m; path = Experiments/ConcurrentExperiment/CustomOperation/CustomOperation.m; sourceTree = "<group>"; };
 		79F7A4D31C7B3BD200CCD0F3 /* ExperimentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExperimentTableViewCell.h; path = Views/ExperimentTableViewCell/ExperimentTableViewCell.h; sourceTree = "<group>"; };
 		79F7A4D41C7B3BD200CCD0F3 /* ExperimentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExperimentTableViewCell.m; path = Views/ExperimentTableViewCell/ExperimentTableViewCell.m; sourceTree = "<group>"; };
 		79F7A4D61C7B3DC800CCD0F3 /* ExperimentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ExperimentTableViewCell.xib; path = Views/ExperimentTableViewCell/ExperimentTableViewCell.xib; sourceTree = "<group>"; };
@@ -430,8 +433,18 @@
 			children = (
 				79EB01C51C8CAFAF0010AC27 /* ConcurrentExperiment.h */,
 				79EB01C61C8CAFAF0010AC27 /* ConcurrentExperiment.m */,
+				79EB01E01C8F4EA90010AC27 /* CustomOperation */,
 			);
 			name = ConcurrentExperiment;
+			sourceTree = "<group>";
+		};
+		79EB01E01C8F4EA90010AC27 /* CustomOperation */ = {
+			isa = PBXGroup;
+			children = (
+				79EB01E11C8F4EC50010AC27 /* CustomOperation.h */,
+				79EB01E21C8F4EC50010AC27 /* CustomOperation.m */,
+			);
+			name = CustomOperation;
 			sourceTree = "<group>";
 		};
 		79F7A4D21C7B2D9E00CCD0F3 /* ExperimentTableViewCell */ = {
@@ -626,6 +639,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79EB01E31C8F4EC50010AC27 /* CustomOperation.m in Sources */,
 				791F1E3B1C8051D900EB2CBF /* CaseResultViewController.m in Sources */,
 				79079BBC1C82430D007B5511 /* ViewGeometricViewController.m in Sources */,
 				79079BA81C810EEF007B5511 /* CustomCollectionObject.m in Sources */,
