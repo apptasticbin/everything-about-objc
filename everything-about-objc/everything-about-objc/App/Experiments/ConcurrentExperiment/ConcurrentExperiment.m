@@ -268,6 +268,18 @@
  - The run method of UIApplication in iOS starts an application’s main loop as part of the normal startup sequence
  */
 
+- (void)NSRunLoopBasicExperimentCase {
+    /** 
+     - modes: This array must contain at least one string. 
+     If you specify nil or an empty array for this parameter, 
+     this method returns without performing the specified selector
+     */
+    [self performSelector:@selector(timerHandler)
+               withObject:nil
+               afterDelay:1.0f
+                  inModes:@[NSDefaultRunLoopMode]];
+}
+
 - (void)NSRunLoopPortBasedInputSourceExperimentCase {
     // port-based input source
     // NOTICE: http://stackoverflow.com/questions/12384210/is-nsportmessage-in-the-ios-api
@@ -276,6 +288,8 @@
     if (dummyMasterPort) {
         NSRunLoop *dummyRunLoop = [NSRunLoop currentRunLoop];
         [dummyRunLoop addPort:dummyMasterPort forMode:NSDefaultRunLoopMode];
+        
+        [NSThread detachNewThreadSelector:@selector(timerHandler) toTarget:self withObject:nil];
     }
 }
 
