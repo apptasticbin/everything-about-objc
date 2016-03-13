@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DynamicSizeView">
+            <rect key="frame" x="0.0" y="0.0" width="250" height="170"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ahD-Gc-EpR">
+                    <rect key="frame" x="0.0" y="0.0" width="250" height="110"/>
+                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" priority="749" constant="110" id="cGs-Kc-6Je"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X6I-oI-JbM">
+                    <rect key="frame" x="104" y="129" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="X6I-oI-JbM" secondAttribute="bottom" constant="20" id="3S2-fy-r47"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="X6I-oI-JbM" secondAttribute="trailing" id="FuK-u6-crO"/>
+                <constraint firstItem="ahD-Gc-EpR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="GOv-ef-TFB"/>
+                <constraint firstItem="ahD-Gc-EpR" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Tsm-DI-Paq"/>
+                <constraint firstAttribute="trailing" secondItem="ahD-Gc-EpR" secondAttribute="trailing" id="hv3-kh-BnN"/>
+                <constraint firstItem="X6I-oI-JbM" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leading" id="rFw-kB-k00"/>
+                <constraint firstItem="X6I-oI-JbM" firstAttribute="top" secondItem="ahD-Gc-EpR" secondAttribute="bottom" constant="19" id="wzc-Fy-WUY"/>
+                <constraint firstItem="X6I-oI-JbM" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="yan-HG-wzk"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="dummyLabel" destination="X6I-oI-JbM" id="Os5-wY-g3F"/>
+                <outlet property="dummyLabelBottomConstraint" destination="3S2-fy-r47" id="M7s-aB-4bq"/>
+                <outlet property="dummyView" destination="ahD-Gc-EpR" id="3op-ZS-SUQ"/>
+                <outlet property="dummyViewHeightConstraint" destination="cGs-Kc-6Je" id="lyd-tO-wGS"/>
+                <outlet property="viewLabelVerticalSpaceConstraint" destination="wzc-Fy-WUY" id="6Vf-NJ-dYt"/>
+            </connections>
+            <point key="canvasLocation" x="448" y="58"/>
+        </view>
+    </objects>
+</document>

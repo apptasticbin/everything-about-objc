@@ -33,6 +33,10 @@
 		79AB6A181C78C0FF00FCD7E2 /* everything_about_objcUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 79AB6A171C78C0FF00FCD7E2 /* everything_about_objcUITests.m */; };
 		79AB6A3A1C78EDC800FCD7E2 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79AB6A351C78EDC800FCD7E2 /* DetailViewController.m */; };
 		79AB6A3C1C78EDC800FCD7E2 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79AB6A391C78EDC800FCD7E2 /* MainViewController.m */; };
+		79C633D31C946C4F007BCDD0 /* DynamicSizeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C633D21C946C4F007BCDD0 /* DynamicSizeView.m */; };
+		79C633D51C946E1C007BCDD0 /* DynamicSizeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79C633D41C946E1C007BCDD0 /* DynamicSizeView.xib */; };
+		79C633D91C95FD39007BCDD0 /* AdvancedAutoLayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C633D81C95FD39007BCDD0 /* AdvancedAutoLayoutView.m */; };
+		79C633DB1C95FD67007BCDD0 /* AdvancedAutoLayoutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79C633DA1C95FD67007BCDD0 /* AdvancedAutoLayoutView.xib */; };
 		79C65BBF1C7945C80063068C /* ExperimentDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C65BBC1C7945C80063068C /* ExperimentDataSource.m */; };
 		79C65BC01C7945C80063068C /* ExperimentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C65BBE1C7945C80063068C /* ExperimentModel.m */; };
 		79EB01C71C8CAFAF0010AC27 /* ConcurrentExperiment.m in Sources */ = {isa = PBXBuildFile; fileRef = 79EB01C61C8CAFAF0010AC27 /* ConcurrentExperiment.m */; };
@@ -115,6 +119,12 @@
 		79AB6A351C78EDC800FCD7E2 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		79AB6A381C78EDC800FCD7E2 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		79AB6A391C78EDC800FCD7E2 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		79C633D11C946C4F007BCDD0 /* DynamicSizeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DynamicSizeView.h; path = Experiments/ViewLayoutExperiment/DynamicSizeView/DynamicSizeView.h; sourceTree = "<group>"; };
+		79C633D21C946C4F007BCDD0 /* DynamicSizeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DynamicSizeView.m; path = Experiments/ViewLayoutExperiment/DynamicSizeView/DynamicSizeView.m; sourceTree = "<group>"; };
+		79C633D41C946E1C007BCDD0 /* DynamicSizeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DynamicSizeView.xib; path = Experiments/ViewLayoutExperiment/DynamicSizeView/DynamicSizeView.xib; sourceTree = "<group>"; };
+		79C633D71C95FD39007BCDD0 /* AdvancedAutoLayoutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AdvancedAutoLayoutView.h; path = Experiments/ViewLayoutExperiment/AdvancedAutoLayoutView/AdvancedAutoLayoutView.h; sourceTree = "<group>"; };
+		79C633D81C95FD39007BCDD0 /* AdvancedAutoLayoutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AdvancedAutoLayoutView.m; path = Experiments/ViewLayoutExperiment/AdvancedAutoLayoutView/AdvancedAutoLayoutView.m; sourceTree = "<group>"; };
+		79C633DA1C95FD67007BCDD0 /* AdvancedAutoLayoutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AdvancedAutoLayoutView.xib; path = Experiments/ViewLayoutExperiment/AdvancedAutoLayoutView/AdvancedAutoLayoutView.xib; sourceTree = "<group>"; };
 		79C65BBB1C7945C80063068C /* ExperimentDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExperimentDataSource.h; sourceTree = "<group>"; };
 		79C65BBC1C7945C80063068C /* ExperimentDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExperimentDataSource.m; sourceTree = "<group>"; };
 		79C65BBD1C7945C80063068C /* ExperimentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExperimentModel.h; sourceTree = "<group>"; };
@@ -280,7 +290,9 @@
 			children = (
 				7985E9B71C91F5D100198757 /* ViewLayoutExperiment.h */,
 				7985E9B81C91F5D100198757 /* ViewLayoutExperiment.m */,
+				79C633D61C959065007BCDD0 /* AdvancedAutoLayoutView */,
 				7985E9BA1C92001E00198757 /* DummyAutoLayoutView */,
+				79C633D01C946C09007BCDD0 /* DynamicSizeView */,
 			);
 			name = ViewLayoutExperiment;
 			sourceTree = "<group>";
@@ -404,6 +416,26 @@
 				79AB6A391C78EDC800FCD7E2 /* MainViewController.m */,
 			);
 			path = MainViewController;
+			sourceTree = "<group>";
+		};
+		79C633D01C946C09007BCDD0 /* DynamicSizeView */ = {
+			isa = PBXGroup;
+			children = (
+				79C633D11C946C4F007BCDD0 /* DynamicSizeView.h */,
+				79C633D21C946C4F007BCDD0 /* DynamicSizeView.m */,
+				79C633D41C946E1C007BCDD0 /* DynamicSizeView.xib */,
+			);
+			name = DynamicSizeView;
+			sourceTree = "<group>";
+		};
+		79C633D61C959065007BCDD0 /* AdvancedAutoLayoutView */ = {
+			isa = PBXGroup;
+			children = (
+				79C633D71C95FD39007BCDD0 /* AdvancedAutoLayoutView.h */,
+				79C633D81C95FD39007BCDD0 /* AdvancedAutoLayoutView.m */,
+				79C633DA1C95FD67007BCDD0 /* AdvancedAutoLayoutView.xib */,
+			);
+			name = AdvancedAutoLayoutView;
 			sourceTree = "<group>";
 		};
 		79C65BAE1C790BF20063068C /* Experiments */ = {
@@ -638,7 +670,9 @@
 				79F7A4F01C7BB25A00CCD0F3 /* CaseTableViewCell.xib in Resources */,
 				79AB6A021C78C0FF00FCD7E2 /* LaunchScreen.storyboard in Resources */,
 				79AB69FF1C78C0FF00FCD7E2 /* Assets.xcassets in Resources */,
+				79C633DB1C95FD67007BCDD0 /* AdvancedAutoLayoutView.xib in Resources */,
 				79079BBD1C82430D007B5511 /* ViewGeometricViewController.xib in Resources */,
+				79C633D51C946E1C007BCDD0 /* DynamicSizeView.xib in Resources */,
 				79AB69FA1C78C0FF00FCD7E2 /* Main.storyboard in Resources */,
 				79F7A4D71C7B3DC800CCD0F3 /* ExperimentTableViewCell.xib in Resources */,
 			);
@@ -690,7 +724,9 @@
 				79079BA21C810CF3007B5511 /* BasicViewExperiment.m in Sources */,
 				79F7A4EA1C7BA7EF00CCD0F3 /* BaseTableViewController.m in Sources */,
 				797AE3171C78FA14005F9BDD /* BaseViewController.m in Sources */,
+				79C633D31C946C4F007BCDD0 /* DynamicSizeView.m in Sources */,
 				79EB01C71C8CAFAF0010AC27 /* ConcurrentExperiment.m in Sources */,
+				79C633D91C95FD39007BCDD0 /* AdvancedAutoLayoutView.m in Sources */,
 				79079BA51C810E13007B5511 /* DummyObject.m in Sources */,
 				79AB6A3A1C78EDC800FCD7E2 /* DetailViewController.m in Sources */,
 				79F7A4E51C7B878E00CCD0F3 /* BaseExperiment.m in Sources */,
