@@ -15,6 +15,8 @@
 		79079BBD1C82430D007B5511 /* ViewGeometricViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79079BBB1C82430D007B5511 /* ViewGeometricViewController.xib */; };
 		791F1E361C7E5D1A00EB2CBF /* CollectionsExperiment.m in Sources */ = {isa = PBXBuildFile; fileRef = 791F1E351C7E5D1A00EB2CBF /* CollectionsExperiment.m */; };
 		791F1E3B1C8051D900EB2CBF /* CaseResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 791F1E3A1C8051D900EB2CBF /* CaseResultViewController.m */; };
+		796B92E51C9743820083E791 /* KeyValueCodingObservingExperiment.m in Sources */ = {isa = PBXBuildFile; fileRef = 796B92E41C9743820083E791 /* KeyValueCodingObservingExperiment.m */; };
+		796B92E91C9747950083E791 /* DummyKeyValueObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 796B92E81C9747950083E791 /* DummyKeyValueObject.m */; };
 		796BB5EE1C878F540057C4BD /* CoreAnimationExperiment.m in Sources */ = {isa = PBXBuildFile; fileRef = 796BB5ED1C878F540057C4BD /* CoreAnimationExperiment.m */; };
 		796F20391C84480900C62748 /* CustomDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 796F20381C84480900C62748 /* CustomDrawView.m */; };
 		796F203D1C84D2FA00C62748 /* CustomControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 796F203C1C84D2FA00C62748 /* CustomControl.m */; };
@@ -84,6 +86,10 @@
 		791F1E351C7E5D1A00EB2CBF /* CollectionsExperiment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CollectionsExperiment.m; path = Experiments/CollectionsExperiment/CollectionsExperiment.m; sourceTree = "<group>"; };
 		791F1E391C8051D900EB2CBF /* CaseResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CaseResultViewController.h; path = CaseResultViewController/CaseResultViewController.h; sourceTree = "<group>"; };
 		791F1E3A1C8051D900EB2CBF /* CaseResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CaseResultViewController.m; path = CaseResultViewController/CaseResultViewController.m; sourceTree = "<group>"; };
+		796B92E31C9743820083E791 /* KeyValueCodingObservingExperiment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeyValueCodingObservingExperiment.h; path = Experiments/KeyValueCodingObservingExperiment/KeyValueCodingObservingExperiment.h; sourceTree = "<group>"; };
+		796B92E41C9743820083E791 /* KeyValueCodingObservingExperiment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeyValueCodingObservingExperiment.m; path = Experiments/KeyValueCodingObservingExperiment/KeyValueCodingObservingExperiment.m; sourceTree = "<group>"; };
+		796B92E71C9747950083E791 /* DummyKeyValueObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DummyKeyValueObject.h; path = Experiments/KeyValueCodingObservingExperiment/DummyKeyValueObject/DummyKeyValueObject.h; sourceTree = "<group>"; };
+		796B92E81C9747950083E791 /* DummyKeyValueObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DummyKeyValueObject.m; path = Experiments/KeyValueCodingObservingExperiment/DummyKeyValueObject/DummyKeyValueObject.m; sourceTree = "<group>"; };
 		796BB5EC1C878F540057C4BD /* CoreAnimationExperiment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreAnimationExperiment.h; path = Experiments/CoreAnimationExperiment/CoreAnimationExperiment.h; sourceTree = "<group>"; };
 		796BB5ED1C878F540057C4BD /* CoreAnimationExperiment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreAnimationExperiment.m; path = Experiments/CoreAnimationExperiment/CoreAnimationExperiment.m; sourceTree = "<group>"; };
 		796F20371C84480900C62748 /* CustomDrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomDrawView.h; sourceTree = "<group>"; };
@@ -228,6 +234,25 @@
 				791F1E3A1C8051D900EB2CBF /* CaseResultViewController.m */,
 			);
 			name = CaseResultViewController;
+			sourceTree = "<group>";
+		};
+		796B92E21C9736B50083E791 /* KeyValueCodingObservingExperiment */ = {
+			isa = PBXGroup;
+			children = (
+				796B92E31C9743820083E791 /* KeyValueCodingObservingExperiment.h */,
+				796B92E41C9743820083E791 /* KeyValueCodingObservingExperiment.m */,
+				796B92E61C9747660083E791 /* DummyKeyValueObject */,
+			);
+			name = KeyValueCodingObservingExperiment;
+			sourceTree = "<group>";
+		};
+		796B92E61C9747660083E791 /* DummyKeyValueObject */ = {
+			isa = PBXGroup;
+			children = (
+				796B92E71C9747950083E791 /* DummyKeyValueObject.h */,
+				796B92E81C9747950083E791 /* DummyKeyValueObject.m */,
+			);
+			name = DummyKeyValueObject;
 			sourceTree = "<group>";
 		};
 		796BB5EB1C878E710057C4BD /* CoreAnimationExperiment */ = {
@@ -448,6 +473,7 @@
 				796BB5EB1C878E710057C4BD /* CoreAnimationExperiment */,
 				791F1E331C7E5CE900EB2CBF /* CollectionsExperiment */,
 				79C65BBA1C7945C80063068C /* DataSource */,
+				796B92E21C9736B50083E791 /* KeyValueCodingObservingExperiment */,
 				796F203E1C85012D00C62748 /* LayerExperiment */,
 				7985E9B61C91F53F00198757 /* ViewLayoutExperiment */,
 				79F7A4E41C7B878E00CCD0F3 /* Experiment.h */,
@@ -700,6 +726,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				79EB01E31C8F4EC50010AC27 /* CustomOperation.m in Sources */,
+				796B92E91C9747950083E791 /* DummyKeyValueObject.m in Sources */,
 				791F1E3B1C8051D900EB2CBF /* CaseResultViewController.m in Sources */,
 				79079BBC1C82430D007B5511 /* ViewGeometricViewController.m in Sources */,
 				79079BA81C810EEF007B5511 /* CustomCollectionObject.m in Sources */,
@@ -728,6 +755,7 @@
 				79EB01C71C8CAFAF0010AC27 /* ConcurrentExperiment.m in Sources */,
 				79C633D91C95FD39007BCDD0 /* AdvancedAutoLayoutView.m in Sources */,
 				79079BA51C810E13007B5511 /* DummyObject.m in Sources */,
+				796B92E51C9743820083E791 /* KeyValueCodingObservingExperiment.m in Sources */,
 				79AB6A3A1C78EDC800FCD7E2 /* DetailViewController.m in Sources */,
 				79F7A4E51C7B878E00CCD0F3 /* BaseExperiment.m in Sources */,
 				79C65BC01C7945C80063068C /* ExperimentModel.m in Sources */,
