@@ -18,5 +18,6 @@
 @property(nonatomic, assign) NSInteger dummyIntegerProperty;
 @property(nonatomic, assign) BOOL dummyBooleanProperty;
 @property(nonatomic, strong) NSMutableArray *dummyArray;
+@property(nonatomic, strong) NSDate *manualChangeProperty;
 
 @end

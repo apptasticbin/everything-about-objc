@@ -124,12 +124,13 @@
 
 /**
  - (id)objectAtIndexedSubscript:(NSUInteger)idx {
- return self.dummyArray[idx];
+    return self.dummyArray[idx];
  }
  
  - (void)setObject:(id)obj atIndexedSubscript:(NSUInteger)idx {
- self.dummyArray[idx] = obj;
+    self.dummyArray[idx] = obj;
  }
+ 
  - (id)objectForKeyedSubscript:(NSString *)key {
  
  }
@@ -137,5 +138,55 @@
  
  }
  */
+
+/**
+ https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/KeyValueObserving/Articles/KVOCompliance.html
+ Manual Change Notification:
+ 
+ - Manual change notification provides additional control over when notifications
+ are emitted, and requires additional coding. You can control automatic notifications 
+ for properties of your subclass by implementing the class method automaticallyNotifiesObserversForKey:.
+ */
+
++ (BOOL)automaticallyNotifiesObserversForKey:(NSString *)key {
+    MARK;
+    if ([key isEqualToString:@"manualChangeProperty"]) {
+        return NO;
+    }
+    return [super automaticallyNotifiesObserversForKey:key];
+}
+
+- (void)setManualChangeProperty:(NSDate *)manualChangeProperty {
+    /**
+     - Call willChange:valuesAtIndexes:forKey: and didChange:valuesAtIndexes:forKey: for To-Many property
+     */
+    [self willChangeValueForKey:@"manualChangeProperty"];
+    _manualChangeProperty = manualChangeProperty;
+    [self didChangeValueForKey:@"manualChangeProperty"];
+}
+
+/**
+ Registering Dependent Keys
+ - 'keyPathsForValuesAffectingManualChangeProperty' is an alternative method
+ - You can't override the keyPathsForValuesAffectingValueForKey: method when you add 
+ a computed property to an existing class using a category, because you're not supposed 
+ to override methods in categories. In that case, implement a matching keyPathsForValuesAffecting<Key> 
+ class method to take advantage of this mechanism.
+ - Note: You CAN NOT set up dependencies on to-many relationships by implementing
+ keyPathsForValuesAffectingValueForKey:. Instead, you must observe the appropriate 
+ attribute of each of the objects in the to-many collection and respond to changes 
+ in their values by updating the dependent key yourself.
+ - About To-Many solution: https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/KeyValueObserving/Articles/KVODependentKeys.html
+ */
+
++ (NSSet *)keyPathsForValuesAffectingValueForKey:(NSString *)key {
+    MARK;
+    NSSet *keyPaths = [super keyPathsForValuesAffectingValueForKey:key];
+    if ([key isEqualToString:@"manualChangeProperty"]) {
+        NSArray *affectingKeys = @[@"dummyStringProperty"];
+        keyPaths = [keyPaths setByAddingObjectsFromArray:affectingKeys];
+    }
+    return keyPaths;
+}
 
 @end
