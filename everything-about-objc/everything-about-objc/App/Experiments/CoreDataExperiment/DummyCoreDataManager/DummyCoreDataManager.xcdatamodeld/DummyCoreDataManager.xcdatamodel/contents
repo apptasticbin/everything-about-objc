@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="14F1509" minimumToolsVersion="Xcode 7.0">
+    <entity name="DummyEntry" parentEntity="DummyParentEntry" syncable="YES">
+        <attribute name="dummyAttribute" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="beFriendedBy" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="DummyFriendsInfo" inverseName="friend" inverseEntity="DummyFriendsInfo" syncable="YES"/>
+        <relationship name="children" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DummyEntry" inverseName="parents" inverseEntity="DummyEntry" syncable="YES"/>
+        <relationship name="friends" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="DummyFriendsInfo" inverseName="source" inverseEntity="DummyFriendsInfo" syncable="YES"/>
+        <relationship name="parents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DummyEntry" inverseName="children" inverseEntity="DummyEntry" syncable="YES"/>
+    </entity>
+    <entity name="DummyFriendsInfo" representedClassName="DummyFriendsInfo" syncable="YES">
+        <relationship name="friend" maxCount="1" deletionRule="Nullify" destinationEntity="DummyEntry" inverseName="beFriendedBy" inverseEntity="DummyEntry" syncable="YES"/>
+        <relationship name="source" maxCount="1" deletionRule="Nullify" destinationEntity="DummyEntry" inverseName="friends" inverseEntity="DummyEntry" syncable="YES"/>
+    </entity>
+    <entity name="DummyParentEntry" isAbstract="YES" syncable="YES">
+        <attribute name="dummyParentAttribute" optional="YES" attributeType="Boolean" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="DummyEntry" positionX="0" positionY="0" width="128" height="118"/>
+        <element name="DummyParentEntry" positionX="-0" positionY="-117" width="128" height="58"/>
+        <element name="DummyFriendsInfo" positionX="232" positionY="26" width="128" height="73"/>
+    </elements>
+</model>
