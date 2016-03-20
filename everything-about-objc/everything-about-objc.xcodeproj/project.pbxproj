@@ -37,6 +37,7 @@
 		79AB6A3C1C78EDC800FCD7E2 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79AB6A391C78EDC800FCD7E2 /* MainViewController.m */; };
 		79B87D3A1C9D86420010F1C1 /* DummyFriendsInfo+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 79B87D371C9D86420010F1C1 /* DummyFriendsInfo+CoreDataProperties.m */; };
 		79B87D3B1C9D86420010F1C1 /* DummyFriendsInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 79B87D391C9D86420010F1C1 /* DummyFriendsInfo.m */; };
+		79B87D3F1C9F25A70010F1C1 /* FileSystemExperiment.m in Sources */ = {isa = PBXBuildFile; fileRef = 79B87D3E1C9F25A70010F1C1 /* FileSystemExperiment.m */; };
 		79C633D31C946C4F007BCDD0 /* DynamicSizeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C633D21C946C4F007BCDD0 /* DynamicSizeView.m */; };
 		79C633D51C946E1C007BCDD0 /* DynamicSizeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79C633D41C946E1C007BCDD0 /* DynamicSizeView.xib */; };
 		79C633D91C95FD39007BCDD0 /* AdvancedAutoLayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C633D81C95FD39007BCDD0 /* AdvancedAutoLayoutView.m */; };
@@ -135,6 +136,8 @@
 		79B87D371C9D86420010F1C1 /* DummyFriendsInfo+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DummyFriendsInfo+CoreDataProperties.m"; path = "Experiments/CoreDataExperiment/DummyFriendsInfo/DummyFriendsInfo+CoreDataProperties.m"; sourceTree = "<group>"; };
 		79B87D381C9D86420010F1C1 /* DummyFriendsInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DummyFriendsInfo.h; path = Experiments/CoreDataExperiment/DummyFriendsInfo/DummyFriendsInfo.h; sourceTree = "<group>"; };
 		79B87D391C9D86420010F1C1 /* DummyFriendsInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DummyFriendsInfo.m; path = Experiments/CoreDataExperiment/DummyFriendsInfo/DummyFriendsInfo.m; sourceTree = "<group>"; };
+		79B87D3D1C9F25A70010F1C1 /* FileSystemExperiment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileSystemExperiment.h; path = Experiments/FileSystemExperiment/FileSystemExperiment.h; sourceTree = "<group>"; };
+		79B87D3E1C9F25A70010F1C1 /* FileSystemExperiment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FileSystemExperiment.m; path = Experiments/FileSystemExperiment/FileSystemExperiment.m; sourceTree = "<group>"; };
 		79C633D11C946C4F007BCDD0 /* DynamicSizeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DynamicSizeView.h; path = Experiments/ViewLayoutExperiment/DynamicSizeView/DynamicSizeView.h; sourceTree = "<group>"; };
 		79C633D21C946C4F007BCDD0 /* DynamicSizeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DynamicSizeView.m; path = Experiments/ViewLayoutExperiment/DynamicSizeView/DynamicSizeView.m; sourceTree = "<group>"; };
 		79C633D41C946E1C007BCDD0 /* DynamicSizeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DynamicSizeView.xib; path = Experiments/ViewLayoutExperiment/DynamicSizeView/DynamicSizeView.xib; sourceTree = "<group>"; };
@@ -471,6 +474,15 @@
 			name = DummyFriendsInfo;
 			sourceTree = "<group>";
 		};
+		79B87D3C1C9F25280010F1C1 /* FileSystemExperiment */ = {
+			isa = PBXGroup;
+			children = (
+				79B87D3D1C9F25A70010F1C1 /* FileSystemExperiment.h */,
+				79B87D3E1C9F25A70010F1C1 /* FileSystemExperiment.m */,
+			);
+			name = FileSystemExperiment;
+			sourceTree = "<group>";
+		};
 		79C633D01C946C09007BCDD0 /* DynamicSizeView */ = {
 			isa = PBXGroup;
 			children = (
@@ -502,6 +514,7 @@
 				79DBC12B1C99ED27002D65AE /* CoreDataExperiment */,
 				791F1E331C7E5CE900EB2CBF /* CollectionsExperiment */,
 				79C65BBA1C7945C80063068C /* DataSource */,
+				79B87D3C1C9F25280010F1C1 /* FileSystemExperiment */,
 				796B92E21C9736B50083E791 /* KeyValueCodingObservingExperiment */,
 				796F203E1C85012D00C62748 /* LayerExperiment */,
 				7985E9B61C91F53F00198757 /* ViewLayoutExperiment */,
@@ -797,6 +810,7 @@
 				79B87D3B1C9D86420010F1C1 /* DummyFriendsInfo.m in Sources */,
 				79AB69F41C78C0FF00FCD7E2 /* AppDelegate.m in Sources */,
 				79F7A4FC1C7C5AA600CCD0F3 /* CaseModel.m in Sources */,
+				79B87D3F1C9F25A70010F1C1 /* FileSystemExperiment.m in Sources */,
 				791F1E361C7E5D1A00EB2CBF /* CollectionsExperiment.m in Sources */,
 				797AE3131C78F923005F9BDD /* RootNavigationController.m in Sources */,
 				7985E9BD1C92008A00198757 /* DummyAutoLayoutView.m in Sources */,

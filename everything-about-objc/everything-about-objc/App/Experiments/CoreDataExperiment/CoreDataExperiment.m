@@ -137,4 +137,14 @@
      */
 }
 
+- (void)CoreDataConcurrencyExperimentCase {
+    /**
+     - NSManagedObjectContext:performBlock
+     - NSManagedObject instances are not intended to be passed between queues. 
+     Doing so can result in corruption of the data and termination of the application. 
+     When it is necessary to hand off a managed object reference from one queue to another, 
+     it must be done through NSManagedObjectID instances
+     */
+}
+
 @end
