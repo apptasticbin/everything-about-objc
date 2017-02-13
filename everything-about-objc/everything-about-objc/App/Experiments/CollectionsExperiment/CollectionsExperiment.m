@@ -49,6 +49,14 @@
     };
     // 'nonnull' is keyword which notify compiler that the value returned by object/parameters will never be nil
     NSArray *sortedNumberArray = [numberArray sortedArrayUsingComparator:sortComparator];
+    /**
+     NSBinarySearchingFirstEqual
+     - Specifies that the search should return the first object in the range that is equal to the given object.
+     NSBinarySearchingLastEqual
+     - Specifies that the search should return the last object in the range that is equal to the given object.
+     NSBinarySearchingInsertionIndex
+     - Returns the index at which you should insert the object in order to maintain a sorted array.
+     */
     NSUInteger insertIndex = [sortedNumberArray indexOfObject:@(2)
                                                inSortedRange:NSMakeRange(0, [sortedNumberArray count])
                                                      options:NSBinarySearchingInsertionIndex | NSBinarySearchingLastEqual
@@ -92,12 +100,20 @@
     MLog(@"Another object index identical: %lu", [customObjectArray indexOfObjectIdenticalTo:anotherObject]);
     
     @try {
+        // NSRangeException will cause the app crashing, and can not be caught by @catch,
+        // this is because the NSRangeException is system exception, and should NEVER be caught in our code
+        // we need to avoid cause this exception, rather than catching it.
+        
         // numberArray[numberArray.count+2];
-        [numberArray objectAtIndex:numberArray.count+2];
+        // [numberArray objectAtIndex:numberArray.count+2];
     }
     @catch (NSException *exception) {
         MLog(@"Catched NSRangeException: %@", exception);
     }
+    
+    // http://stackoverflow.com/questions/14398756/find-the-average-of-an-nsmutablearray-with-valueforkeypath
+    NSInteger averageNumber = [[numberArray valueForKeyPath:@"@avg.integerValue"] integerValue];
+    MLog(@"average number is: %ld", (long)averageNumber);
 }
 
 - (void)NSPointerArrayExperimentCase {
