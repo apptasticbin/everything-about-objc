@@ -85,6 +85,9 @@
     // Character folding operations remove distinctions between characters
     NSString *foldString = [duplicatedString stringByFoldingWithOptions:NSCaseInsensitiveSearch locale:[NSLocale currentLocale]];
     MLog(@"Fold string: %@", foldString);
+    
+    NSString *prefixedString = @"xyz1234567";
+    MLog(@"Has prefix 'xyz': %@", @([prefixedString hasPrefix:@"xyz"]));
 }
 
 - (void) NSStringFormatExperimentCase {
@@ -345,6 +348,46 @@
     DummyObject *anotherDummySingleton = [DummyObject sharedObject];
     anotherDummySingleton.dummyProperty = 99;
     MLog(@"Dummy singleton value: %ld", dummySingleton.dummyProperty);
+}
+
+- (void)NSIndexSetExperimentCase {
+    NSArray *numbers = @[@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8"];
+    // indexes: 0, 1
+    NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, 2)];
+    NSMutableIndexSet *mutableIndexSet = [NSMutableIndexSet indexSet];
+    // mutable indxes: 0, 1
+    [mutableIndexSet addIndexes:indexSet];
+    // mutalbe indexs: 0, 1, 5
+    [mutableIndexSet addIndex:5];
+
+    NSMutableArray *printableIndexes = [NSMutableArray array];
+    [mutableIndexSet enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL * _Nonnull stop) {
+        [printableIndexes addObject:@(idx)];
+    }];
+    NSLog(@"Mutable indexes: %@", [printableIndexes componentsJoinedByString:@" "]);
+    
+    NSArray *selectedNumbers = [numbers objectsAtIndexes:mutableIndexSet];
+    MLog(@"Selected numbers: %@", selectedNumbers);
+}
+
+- (void)NSIndexPathExperimentCase {
+    NSUInteger indexes[] = {1, 2, 3, 4};
+    NSIndexPath *indexPath = [NSIndexPath indexPathWithIndexes:indexes length:4];
+    indexPath = [indexPath indexPathByAddingIndex:10];
+    
+    MLog(@"Index path: %@", indexPath);
+    MLog(@"Length of index path: %@", @(indexPath.length));
+    
+    NSMutableArray *indexPathIndexes = [NSMutableArray array];
+    for (int i=0; i<indexPath.length; i++) {
+        NSUInteger index = [indexPath indexAtPosition:i];
+        [indexPathIndexes addObject:@(index)];
+    }
+    
+    MLog(@"Indexes along the path: %@", [indexPathIndexes componentsJoinedByString:@" "]);
+    
+    NSIndexPath *rowIndexPath = [NSIndexPath indexPathForRow:2 inSection:3];
+    MLog(@"Row index path: %@", rowIndexPath);
 }
 
 #pragma mark - Helper
